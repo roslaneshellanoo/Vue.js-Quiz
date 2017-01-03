@@ -83,7 +83,7 @@
                     <!-- Note: prev is hidden on first question -->
                     <mu-raised-button v-if="questionIndex > 0" v-on:click="prev" label="Prev"
                                       class="demo-raised-button" />
-                    <mu-raised-button v-on:click="next" label="Next" class="demo-raised-button"
+                    <mu-raised-button @click="next" label="Next" class="demo-raised-button"
                                       primary/>
 
                 </div>
@@ -101,6 +101,16 @@
                                   primary/>
 
             </div>
+
+          <mu-raised-button label="show snackbar" class="demo-snackbar-button" @click="showSnackbar"/>
+
+          <mu-snackbar v-if="snackbar" message="Some message..." action="close"
+                       @actionClick="hideSnackbar"
+                       @close="hideSnackbar"/>
+
+          <mu-toast v-if="toast" message="Some message..." @close="hideToast"/>
+
+
         </div>
     </div>
 </template>
@@ -132,7 +142,6 @@
                             }
                         ],
                         answer: 4
-
 
                     },
 
@@ -191,7 +200,10 @@
                 questionIndex: 0,
                 // An array initialized with "false" values for each question
                 // It means: "did the user answered correctly to the question n?" "no".
-                userResponses: Array(quiz.questions.length).fill(false)
+                userResponses: Array(quiz.questions.length).fill(false),
+
+              snackbar: false,
+              toast: false
 
             }
 
@@ -203,6 +215,10 @@
 
         methods: {
 
+            alertRightAnswer: function () {
+              alert('alert answer')
+            },
+
 
 
             refresh: function () {
@@ -210,7 +226,7 @@
                 this.questionIndex = 0;
                 this.activeStep = 0;
                 //this.loading = true;
-                console.log(this)
+               // console.log(this)
 
             },
 
@@ -220,6 +236,8 @@
             next: function () {
                 this.questionIndex++;
                 this.activeStep++;
+                this.showToast();
+                //this.alertRightAnswer();
 
             },
             // Go to previous question
@@ -235,82 +253,61 @@
             // Return "true" count in userResponses
             score: function () {
                 var right_answers = 0;
+
                 var quizObj = this.quiz;
+                var _this = this;
                 //console.log(quizObj)
                 this.userResponses.forEach(function (value, index) {
-                    //console.dir(quizObj.questions[index].answer);
+
                     if (quizObj.questions[index].answer == value) {
+
                         right_answers++;
-                        console.info(right_answers);
 
+                        console.dir(quizObj.questions[index].answer == value);
+
+
+//                         if(quizObj.questions[index].answer == value) {
+//                           _this.alertRightAnswer()
+//                         };
                     }
-
                 });
+
+
+
                 return right_answers;
 
-                //console.log(Array(this.quiz.questions.length).fill(false));
-
+//                console.log(Array(this.quiz.questions.length).fill(false));
 //                return this.userResponses.filter(function(val) {
-//
 //                    console.log(val);
 //                    return val;
-//
 //                }).length;
-
-
             },
+
+
+          showSnackbar () {
+            this.snackbar = true
+            if (this.snackTimer) clearTimeout(this.snackTimer)
+            this.snackTimer = setTimeout(() => { this.snackbar = false }, 2000)
+          },
+          hideSnackbar () {
+            this.snackbar = false
+            if (this.snackTimer) clearTimeout(this.snackTimer)
+          },
+          showToast () {
+            this.toast = true
+            if (this.toastTimer) clearTimeout(this.toastTimer)
+            this.toastTimer = setTimeout(() => { this.toast = false }, 2000)
+          },
+          hideToast () {
+            this.toast = false
+            if (this.toastTimer) clearTimeout(this.toastTimer)
+          }
 
 
         },
 
 
-        computed: {
-            content () {
-                let message = '';
-                switch (this.activeStep) {
-                    case 0:
-                        message = 'Question message 1';
-                        break;
-                    case 1:
-                        message = 'Question message 2';
-                        break;
-                    case 2:
-                        message = 'Question message 3';
-                        break;
-                    case 3:
-                        message = 'Question message 4';
-                        break;
-                    default:
-                        message = 'fuck! 又 TM 出错了！！！';
-                        break
-                }
-                return message
-            },
-            finished () {
-                return this.activeStep > 2
-            }
-        },
 
-
-//        mounted: function () {
-//            this.$nextTick(function () {
-//
-//                Array.from(document.querySelectorAll('pre code'))
-//                    .forEach((code) => {
-//                        code.innerHTML = h(code.textContent)
-//                    });
-//            })
-//        },
-//
-//        updated: function () {
-//            this.$nextTick(function () {
-//
-//                Array.from(document.querySelectorAll('pre code'))
-//                    .forEach((code) => {
-//                        code.innerHTML = h(code.textContent)
-//                    });
-//            })
-//        }
     }
 </script>
 
