@@ -56,7 +56,9 @@
                 <input type="radio"
                        :value="response.id"
                        :name="index"
-                       v-model="userResponses[index]">
+                       v-model="userResponses[index]"
+
+                >
 
 
                 <div class="mu-radio-wrapper">
@@ -84,7 +86,8 @@
           <mu-raised-button v-if="questionIndex > 0" v-on:click="prev" label="Prev"
                             class="demo-raised-button"/>
 
-          <mu-raised-button v-if="!answer_checked" @click="next" label="Next" class="demo-raised-button"
+          <mu-raised-button  @click="next" label="Next"
+                            class="demo-raised-button"
                             primary/>
 
         </div>
@@ -103,13 +106,14 @@
 
       </div>
 
-      <mu-raised-button label="show snackbar" class="demo-snackbar-button" @click="showSnackbar"/>
 
-      <mu-snackbar v-if="snackbar" message="Some message..." action="close"
+
+      <mu-snackbar v-if="snackbar" message="Choose an answer..." action="close"
                    @actionClick="hideSnackbar"
                    @close="hideSnackbar"/>
 
-      <mu-toast v-if="toast" message="Some message..." @close="hideToast"/>
+      <mu-toast v-if="toast" :message="this.userResponses.toString()"
+                @close="hideToast"/>
 
 
     </div>
@@ -126,13 +130,10 @@
     name: 'quiz',
     loading: false,
 
-
     data() {
-
 
       return {
 
-        answer_checked: false,
         activeStep: 0,
         quiz: quiz,
         // Store current question index
@@ -154,27 +155,27 @@
 
     methods: {
 
-      alertRightAnswer: function () {
-        alert('alert answer')
-      },
-
       refresh: function () {
 
         this.questionIndex = 0;
         this.activeStep = 0;
 
-
       },
-
 
       // Go to next question
       next: function () {
-        this.questionIndex++;
-        this.activeStep++;
-        this.showToast();
-        //this.alertRightAnswer();
+
+        if (this.userResponses[this.activeStep] === false) {
+         this.showSnackbar();
+        }
+        else {
+          this.questionIndex++;
+          this.activeStep++;
+          this.showToast();
+        }
 
       },
+
       // Go to previous question
       prev: function () {
         this.questionIndex--;
@@ -187,36 +188,23 @@
       },
       // Return "true" count in userResponses
       score: function () {
-        var right_answers = 0;
+        let right_answers = 0;
 
-        var quizObj = this.quiz;
-        var _this = this;
-        //console.log(quizObj)
+        let quizObj = this.quiz;
+
         this.userResponses.forEach(function (value, index) {
 
           if (quizObj.questions[index].answer == value) {
 
             right_answers++;
 
-            console.dir(quizObj.questions[index].answer == value);
-
-
-//             if(quizObj.questions[index].answer == value) {
-//               _this.alertRightAnswer()
-//             };
           }
-        });
 
+        });
 
         return right_answers;
 
-//                console.log(Array(this.quiz.questions.length).fill(false));
-//                return this.userResponses.filter(function(val) {
-//                    console.log(val);
-//                    return val;
-//                }).length;
       },
-
 
       showSnackbar () {
         this.snackbar = true
