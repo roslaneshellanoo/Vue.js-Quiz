@@ -48,7 +48,7 @@
           </div>
 
 
-          <mu-divider/>
+          <!--<mu-divider/>-->
           <br>
           <ul class="list-reset">
             <li v-for="response in question.responses">

@@ -233,6 +233,14 @@
   }
 
 
+  #app code[class*=language-], #app pre[class*=language-] {
+    font: 14px/17px Consolas,Lucida Console,Menlo,Monaco,monospace;
+    z-index: 0;
+    text-shadow: none;
+    margin: 0;
+  }
+
+
   @media (max-width: 600px) {
     body {
       font-size: 14px
