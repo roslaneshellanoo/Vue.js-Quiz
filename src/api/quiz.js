@@ -1,5 +1,6 @@
-var codex = `      
-const store = new Vuex.Store({
+let
+  codex1 =
+    `const store = new Vuex.Store({
     state: {
       count: 0
     },
@@ -8,7 +9,20 @@ const store = new Vuex.Store({
       decrement: state => state.count--
     }
   });
-`;
+`,
+
+  codex2 =
+    `var name = "John";
+function sayHi() {
+  alert(name);
+}
+
+setTimeout(function() {
+  var name = "James";
+  sayHi();
+}, 1000);
+`
+
 
 const quiz = {
   title: 'My quiz',
@@ -16,7 +30,7 @@ const quiz = {
 
     {
       text: 'Inside which HTML element do we put the JavaScript?',
-      textcode: codex,
+      textcode: codex1,
       responses: [
 
         {
@@ -46,28 +60,26 @@ const quiz = {
 
     {
       text: "Что выведет этот код? ",
-      textcode: `
-      this.libraries.splice(this.libraries.indexOf(library), 1)
-      `,
+      textcode: codex2,
       responses: [
 
         {
-          text: 'Wrong, too bad.',
+          text: 'James',
           id: 1,
           mark: false
         },
         {
-          text: 'Right2',
+          text: 'John',
           id: 2,
           mark: true
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'undefined',
           id: 3,
           mark: false
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'error',
           id: 4,
           mark: false
         }

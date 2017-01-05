@@ -44,14 +44,7 @@
                         </span>
           </h4>
           <div class="wrap-text-code">
-
-
-             <pre><code class="language-js">
-              {{ question.textcode }}</code>
-            </pre>
-
-
-
+             <pre><code class="language-js">{{ question.textcode }}</code></pre>
           </div>
 
 
