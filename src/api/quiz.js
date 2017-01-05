@@ -1,9 +1,22 @@
+var codex = `      
+const store = new Vuex.Store({
+    state: {
+      count: 0
+    },
+    mutations: {
+      increment: state => state.count++,
+      decrement: state => state.count--
+    }
+  });
+`;
+
 const quiz = {
   title: 'My quiz',
   questions: [
 
     {
       text: 'Inside which HTML element do we put the JavaScript?',
+      textcode: codex,
       responses: [
 
         {
@@ -33,7 +46,9 @@ const quiz = {
 
     {
       text: "Что выведет этот код? ",
-      textcode:'this.element = element;',
+      textcode: `
+      this.libraries.splice(this.libraries.indexOf(library), 1)
+      `,
       responses: [
 
         {

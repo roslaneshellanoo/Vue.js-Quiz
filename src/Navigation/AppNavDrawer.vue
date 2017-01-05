@@ -4,7 +4,7 @@
     <div class="logo text-center">
       <img src="../assets/exam.svg">
       <h4 class="gradient-text">
-        <span>Code Quiz</span>
+        <span>Codexam</span>
       </h4>
     </div>
 

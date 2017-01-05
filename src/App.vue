@@ -224,6 +224,14 @@
   }
 
 
+  .text-code {
+    font-family: monospace;
+    white-space: pre;
+    background-color: #1B2B34;
+    color: #C3CAD5;
+    padding: 0 2rem;
+  }
+
 
   @media (max-width: 600px) {
     body {

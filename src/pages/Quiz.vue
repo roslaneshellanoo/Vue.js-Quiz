@@ -43,9 +43,17 @@
 
                         </span>
           </h4>
-          <span class="text-code">
-                {{ question.textcode }}
-          </span>
+          <div class="wrap-text-code">
+
+
+             <pre><code class="language-js">
+              {{ question.textcode }}</code>
+            </pre>
+
+
+
+          </div>
+
 
           <mu-divider/>
           <br>
@@ -124,7 +132,7 @@
 
 
 <script>
-
+  import Prism from '../plugins/prismjs'
   import quiz from  '../api/quiz.js'
 
   export default {
@@ -151,7 +159,16 @@
 
     },
 
-    created: function () {
+    mounted: function () {
+
+//      let pre = document.getElementsByTagName("pre");
+//      for (let i = 0, len = pre.length; i < len; i++) {
+//        let text = pre[i].firstChild.nodeValue;
+//        pre[i].firstChild.nodeValue = text.replace(/^\n+|\n+$/g, "");
+//      }
+
+
+      Prism.highlightAll();
 
     },
 
@@ -209,11 +226,13 @@
       },
 
       showSnackbar () {
-        this.snackbar = true
-        if (this.snackTimer) clearTimeout(this.snackTimer)
-        this.snackTimer = setTimeout(() => {
-          this.snackbar = false
-        }, 2000)
+        this.snackbar = true;
+        if (this.snackTimer) {
+          clearTimeout(this.snackTimer);
+          this.snackTimer = setTimeout(() => {
+            this.snackbar = false
+          }, 2000)
+        }
       },
       hideSnackbar () {
         this.snackbar = false
