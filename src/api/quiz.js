@@ -32,7 +32,8 @@ const quiz = {
     },
 
     {
-      text: "Question 2",
+      text: "Что выведет этот код? ",
+      textcode:'this.element = element;',
       responses: [
 
         {

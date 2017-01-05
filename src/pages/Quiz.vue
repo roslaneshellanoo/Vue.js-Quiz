@@ -38,11 +38,14 @@
           <br>
 
           <h4>
-            {{ questionIndex +1 }}.
+            <!--{{ questionIndex +1 }}.-->
             <span v-html="question.text">
 
                         </span>
           </h4>
+          <span class="text-code">
+                {{ question.textcode }}
+          </span>
 
           <mu-divider/>
           <br>
@@ -86,7 +89,7 @@
           <mu-raised-button v-if="questionIndex > 0" v-on:click="prev" label="Prev"
                             class="demo-raised-button"/>
 
-          <mu-raised-button  @click="next" label="Next"
+          <mu-raised-button @click="next" label="Next"
                             class="demo-raised-button"
                             primary/>
 
@@ -105,7 +108,6 @@
                           primary/>
 
       </div>
-
 
 
       <mu-snackbar v-if="snackbar" message="Choose an answer..." action="close"
@@ -166,7 +168,7 @@
       next: function () {
 
         if (this.userResponses[this.activeStep] === false) {
-         this.showSnackbar();
+          this.showSnackbar();
         }
         else {
           this.questionIndex++;
