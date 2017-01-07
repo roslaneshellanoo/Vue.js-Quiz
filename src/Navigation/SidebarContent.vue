@@ -9,6 +9,9 @@
       <mu-list-item>
         <router-link to="/quiz">Javascript Quiz</router-link>
       </mu-list-item>
+      <mu-list-item>
+        <router-link to="/cheatsheet">JS Cheatsheet</router-link>
+      </mu-list-item>
     </mu-list>
 
 
