@@ -32,12 +32,10 @@
 
       <!-- index is used to check with current question index -->
 
-      <div v-for="(question, index) in quiz.questions">
+      <div class="wrap-quiz-content" v-for="(question, index) in quiz.questions">
         <!-- Hide all questions, show only the one with index === to current question index -->
-        <div v-show="index === questionIndex">
-          <br>
-
-          <h4>
+        <div class="quiz-block" v-show="index === questionIndex">
+          <h4 class="spacing-bottom">
             <!--{{ questionIndex +1 }}.-->
             <span v-html="question.text">
 
@@ -152,14 +150,7 @@
 
     },
 
-    mounted: function () {
-
-//      let pre = document.getElementsByTagName("pre");
-//      for (let i = 0, len = pre.length; i < len; i++) {
-//        let text = pre[i].firstChild.nodeValue;
-//        pre[i].firstChild.nodeValue = text.replace(/^\n+|\n+$/g, "");
-//      }
-
+    mounted: ()=> {
 
       Prism.highlightAll();
 
@@ -189,7 +180,7 @@
       },
 
       // Go to previous question
-      prev: function () {
+      prev: ()=> {
         this.questionIndex--;
         this.activeStep--;
       },

@@ -2,49 +2,40 @@
   <mu-drawer @close="handleClose" :open="open" :docked="docked" class="app-drawer" :zDepth="1">
 
     <div class="logo text-center">
-      <img src="../assets/exam.svg">
+
+      <router-link to="/" exact>
+        <img src="../assets/exam.svg">
+      </router-link>
       <h4 class="gradient-text">
         <span>Codexam</span>
       </h4>
     </div>
 
     <mu-divider/>
-    <mu-list class="sidebar-nav" @itemClick="docked ? '' : toggle()">
-      <mu-list-item>
-        <router-link to="/" exact>Home</router-link>
-      </mu-list-item>
-      <mu-list-item>
-        <router-link to="/quiz">Javascript Quiz</router-link>
-      </mu-list-item>
-    </mu-list>
 
 
-    <mu-list>
+    <sidebar-content></sidebar-content>
 
-      <mu-list-item  title="Javascript Quiz" toggleNested>
-        <mu-list-item slot="nested" title="Jquery"></mu-list-item>
-        <mu-list-item slot="nested" title="React.js"></mu-list-item>
-        <mu-list-item slot="nested" title="Vue.js"></mu-list-item>
-      </mu-list-item>
-
-      <mu-list-item title="Python Quiz" toggleNested>
-        <mu-list-item slot="nested" title="Jquery"></mu-list-item>
-        <mu-list-item slot="nested" title="React.js"></mu-list-item>
-        <mu-list-item slot="nested" title="Vue.js"></mu-list-item>
-      </mu-list-item>
-
-    </mu-list>
 
   </mu-drawer>
 </template>
 
 
 <script>
+
+  import SidebarContent from './SidebarContent.vue'
+
   export default {
+
+    components: {
+      'sidebar-content': SidebarContent
+    },
 
     data() {
 
-      return {}
+      return {
+
+      }
     },
 
     props: {
@@ -60,10 +51,13 @@
     },
 
     methods: {
-      handleClose () {
+
+      handleClose: ()=> {
         this.$emit('close')
-      }
-    }
+      },
+
+    },
+
   }
 </script>
 

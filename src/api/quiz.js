@@ -1,5 +1,5 @@
 let
-  codex1 =
+  question1 =
     `const store = new Vuex.Store({
     state: {
       count: 0
@@ -11,7 +11,7 @@ let
   });
 `,
 
-  codex2 =
+  question2 =
     `var name = "John";
 function sayHi() {
   alert(name);
@@ -21,7 +21,7 @@ setTimeout(function() {
   var name = "James";
   sayHi();
 }, 1000);
-`
+`;
 
 
 const quiz = {
@@ -30,7 +30,7 @@ const quiz = {
 
     {
       text: 'Inside which HTML element do we put the JavaScript?',
-      textcode: codex1,
+      textcode: question1,
       responses: [
 
         {
@@ -60,7 +60,7 @@ const quiz = {
 
     {
       text: "Что выведет этот код? ",
-      textcode: codex2,
+      textcode: question2,
       responses: [
 
         {

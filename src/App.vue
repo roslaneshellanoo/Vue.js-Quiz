@@ -10,8 +10,9 @@
       <router-link to="/quiz">Quiz</router-link>
       <mu-icon-button icon='expand_more' slot="right"/>
 
-      <mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked"
-                 class="demo-switch"  />
+
+      <mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"
+                 class="theme-switch"  />
 
     </mu-appbar>
 
@@ -59,6 +60,8 @@
     },
 
     methods: {
+
+
 
       toggleNav () {
         this.open = !this.open

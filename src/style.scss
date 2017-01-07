@@ -90,7 +90,7 @@ small { font-size: 75%; }
 }
 
 .spacing-bottom {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 
@@ -163,7 +163,10 @@ small { font-size: 75%; }
 }
 
 
-
+.quiz-block {
+  box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
+  padding: 2rem 3rem;
+}
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
