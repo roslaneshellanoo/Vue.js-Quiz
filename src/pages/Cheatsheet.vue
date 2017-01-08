@@ -1,5 +1,5 @@
 <template>
-  <div class="list-of -items">
+  <mu-paper  class="list-of -items">
 
     <div v-for="item in items" class="single-item">
 
@@ -7,8 +7,7 @@
 
     </div>
 
-
-  </div>
+  </mu-paper>
 </template>
 
 <script>
