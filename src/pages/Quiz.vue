@@ -59,7 +59,6 @@
                        :value="response.id"
                        :name="index"
                        v-model="userResponses[index]"
-
                 >
 
 

@@ -186,7 +186,8 @@
       },
 
       removeLibrary: function (library) {
-        this.libraries.splice(this.libraries.indexOf(library), 1)
+        this.libraries.splice(this.libraries.indexOf(library), 1);
+        this.libraries.indexOf(library)
 
       },
 

@@ -1,28 +1,23 @@
 <template>
-
-
   <div>
 
     <h2>
       JS Cheatsheet
     </h2>
+    <!--:class="{ activeclass: isActive }"-->
+    <li v-for="item in basicObjects.arrayMethods"
+         :class="{ activeclass: show }">
 
-    <div v-for="item in objectMethods.arrayMethods" class="demo-icon-tip" ref="demo" @mouseenter="handleHover" @mouseleave="handleHoverExit">
+     <div class="item-text">
+       {{item.text}}
+     </div>
+      <button @click="toggle(item)">show</button>
 
-     <span>{{item.text}}</span>
-      <mu-tooltip :label="item.desc" :show="show" :trigger="trigger" :touch="touch" verticalPosition="top" horizontalPosition="center"/>
+      <div v-show="item.show"  class="item-desc">
+        {{item.desc}}
+      </div>
 
-
-    </div>
-
-
-
-
-    <div class="methods" v-for="item in objectMethods.arrayMethods">
-
-      {{item.desc}}
-
-    </div>
+    </li>
 
 
 
@@ -32,56 +27,60 @@
 <script>
   export default {
     data () {
-      let objectMethods = {
+
+      let basicObjects = {
 
         arrayMethods: [
 
           {
             text: 'concat()',
-            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.'
+            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+            show: false
           },
           {
             text: 'copyWithin()',
-            desc: 'The copyWithin() method shallow copies part of an array to another location in the same array and returns it, without modifying its size.'
+            desc: 'The copyWithin() method shallow copies part of an array to another location in the same array and returns it, without modifying its size.',
+            show: false
           },
           {
             text: 'from()',
-            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.'
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+            show: false
           },
 
 
+        ],
+
+        arrayProperties: [
+
         ]
 
-
-      }
+      };
       return {
-        objectMethods,
-        show: false,
+        basicObjects,
         touch: false,
         trigger: null,
+        isActive: false
       }
     },
-    mounted () {
-      this.trigger = this.$refs.demo;
 
-      console.log(this.objectMethods.arrayMethods.text)
-    },
     methods: {
-      handleHover () {
-        this.show = true
-      },
-      handleHoverExit () {
-        this.show = false
+
+      toggle: function (item) {
+        item.show = !item.show;
       }
-    }
+    },
+
+    // props: ['isActive']
   }
 </script>
 
 <style lang="css">
   .demo-icon-tip{
-    display: inline-block;
+    display: block;
     cursor: default;
     position: relative;
+    margin-bottom: 1rem;
   }
 
   .demo-tip-setting p{
@@ -99,10 +98,8 @@
     margin-left: 8px;
   }
 
-  /*.mu-tooltip {*/
-
-    /*max-width: 200px;*/
-    /*height: auto !important;*/
-
+  /*.item-desc {*/
+    /*display: none;*/
   /*}*/
+
 </style>
