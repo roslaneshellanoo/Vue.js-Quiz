@@ -1,105 +1,50 @@
 <template>
-  <div>
+  <div class="list-of -items">
 
-    <h2>
-      JS Cheatsheet
-    </h2>
-    <!--:class="{ activeclass: isActive }"-->
-    <li v-for="item in basicObjects.arrayMethods"
-         :class="{ activeclass: show }">
+    <div v-for="item in items" class="single-item">
 
-     <div class="item-text">
-       {{item.text}}
-     </div>
-      <button @click="toggle(item)">show</button>
+      <toggle-list-item  :item="item"></toggle-list-item>
 
-      <div v-show="item.show"  class="item-desc">
-        {{item.desc}}
-      </div>
-
-    </li>
-
+    </div>
 
 
   </div>
 </template>
 
 <script>
+
+  import toggleList from '../components/toggleList.vue'
+
   export default {
+
+    name: 'cheatsheet',
+
+    components: {
+      'toggle-list-item': toggleList
+    },
+
     data () {
 
-      let basicObjects = {
+      return {
+        isActive: false,
 
-        arrayMethods: [
-
+        items: [
           {
-            text: 'concat()',
-            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
-            show: false
-          },
-          {
-            text: 'copyWithin()',
-            desc: 'The copyWithin() method shallow copies part of an array to another location in the same array and returns it, without modifying its size.',
-            show: false
-          },
-          {
-            text: 'from()',
+            text: 'Foo',
             desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
-            show: false
           },
+          {
+            text: 'Bar',
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
 
-
+          }
         ],
 
-        arrayProperties: [
-
-        ]
-
-      };
-      return {
-        basicObjects,
-        touch: false,
-        trigger: null,
-        isActive: false
       }
     },
 
-    methods: {
 
-      toggle: function (item) {
-        item.show = !item.show;
-      }
-    },
 
-    // props: ['isActive']
   }
 </script>
 
-<style lang="css">
-  .demo-icon-tip{
-    display: block;
-    cursor: default;
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  .demo-tip-setting p{
-    display: flex;
-    align-items: center;
-  }
-
-  .demo-tip-setting .mu-radio {
-    margin-left: 32px;
-  }
-  .demo-tip-setting .mu-radio:first-child{
-    margin-left: 0;
-  }
-  .demo-tip-setting .mu-switch {
-    margin-left: 8px;
-  }
-
-  /*.item-desc {*/
-    /*display: none;*/
-  /*}*/
-
-</style>
