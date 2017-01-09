@@ -1,17 +1,22 @@
 <template>
-  <mu-list-item :title="item.text" class="toggle-list-item"  :class="{ activeitem: isActive }">
+  <div :title="item.text" class="toggle-list-item" :class="{ activeitem: isActive }">
 
-
-    <div @mouseenter="handleHover" @mouseleave="handleHoverExit">
-      <mu-icon slot="right" value="info"/>
+    <div class="item-text">
+      <span>
+        {{ item.text }}
+      </span>
+      <!--<span @mouseenter="handleHover" @mouseleave="handleHoverExit">-->
+      <span @click="toggle" >
+        <mu-icon slot="right" value="info"/>
+       </span>
     </div>
 
 
-    <div v-show="isActive" class="item-desc">
+    <div v-if="isActive" class="item-desc">
       {{item.desc}}
     </div>
 
-  </mu-list-item>
+  </div>
 </template>
 
 <script>
