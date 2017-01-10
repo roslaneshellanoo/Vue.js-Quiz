@@ -1,10 +1,10 @@
 <template>
-
-
-  <div class="list-of-items">
-    <div class="text-center">
-      <h1>Javascript Cheat Sheet</h1>
-    </div>
+<div class="wrap-ch">
+  <div class="text-center">
+    <h1>Javascript Cheat Sheet</h1>
+  </div>
+  <div class="list-of-items mu-paper mu-paper-round mu-paper-1">
+    <div class="mu-sub-header">Array Methods</div>
 
     <div v-for="item in items" class="single-item">
 
@@ -13,6 +13,7 @@
     </div>
 
   </div>
+</div>
 </template>
 
 <script>
@@ -32,16 +33,47 @@
       return {
         isActive: false,
 
+
+
+
+
+
+//        reverse()
+//        shift()
+//        slice()
+//        sort()
+//        splice()
+//        toString()
+//        unshift()
+//        valueOf()
+
         items: [
           {
-            text: 'Foo',
+            text: 'concat()',
             desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
           },
           {
-            text: 'Bar',
+            text: 'indexOf()',
             desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
 
-          }
+          },
+          {
+            text: 'join()',
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+          },
+          {
+            text: 'lastIndexOf()',
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+          },
+          {
+            text: 'pop()',
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+
+          },
+          {
+            text: 'push()',
+            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+          },
         ],
 
       }
@@ -56,6 +88,7 @@
   .list-of-items {
     display: flex;
     flex-direction: column;
+    max-width: 250px;
   }
 
   .single-item {
@@ -69,6 +102,7 @@
     justify-content: space-between;
     height: 40px;
     border-bottom: 1px solid #e4e4e4;
+    padding: 0 16px;
   }
 
   .list-of-items .mu-icon {
