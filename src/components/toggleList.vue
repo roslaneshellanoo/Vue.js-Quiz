@@ -5,8 +5,8 @@
       <span>
         {{ item.text }}
       </span>
-      <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
-      <!--<span @click="toggle" >-->
+      <!--<span @mouseenter="handleHover" @mouseleave="handleHoverExit">-->
+      <span @click="toggle" >
         <mu-icon slot="right" value="info"/>
        </span>
     </div>
