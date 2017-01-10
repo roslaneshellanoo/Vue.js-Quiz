@@ -50,11 +50,11 @@
         items: [
           {
             text: 'concat()',
-            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
           },
           {
             text: 'indexOf()',
-            desc: 'The Array.from() method creates a new Array instance from an array-like or iterable object.',
+            desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
 
           },
           {
@@ -119,10 +119,9 @@
     color: #fff;
     padding: 1.5rem;
     display: block;
-    top: -9.4rem;
-    bottom: auto;
-    right: 2px;
-    border-radius: 7px 7px 0px 7px;
+    bottom: 4.2rem;
+    right: 17px;
+    border-radius: 7px 7px 0 7px;
   }
 
   .item-desc:after {
