@@ -6,7 +6,7 @@
   </div>
   <div class="list-of-items mu-paper mu-paper-round mu-paper-1">
 
-    <div class="mu-sub-header">Array Methods</div>
+
 
     <div v-for="item in items" class="single-item">
 
@@ -35,47 +35,78 @@
       return {
         isActive: false,
 
-
-
-
-
-//        reverse()
-//        shift()
-//        slice()
-//        sort()
-//        splice()
-//        toString()
-//        unshift()
-//        valueOf()
-
         items: [
+
           {
-            text: 'concat()',
-            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
-          },
-          {
-            text: 'indexOf()',
-            desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+            category: "fruits",
+            list: [
+              {
+                text: 'applesconcat()',
+                desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+              },
+              {
+                text: 'applesindexOf()',
+                desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+
+              },
+              {
+                text: 'applesjoin()',
+                desc: 'The join() method joins all elements of an array into a string.',
+              },
+              {
+                text: 'appleslastIndexOf()',
+                desc: 'The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.',
+              },
+              {
+                text: 'applespop()',
+                desc: 'The pop() method removes the last element from an array and returns that element. This method changes the length of the array.',
+
+              },
+              {
+                text: 'applespush()',
+                desc: 'The push() method adds one or more elements to the end of an array and returns the new length of the array.',
+              },
+            ]
+
 
           },
-          {
-            text: 'join()',
-            desc: 'The join() method joins all elements of an array into a string.',
-          },
-          {
-            text: 'lastIndexOf()',
-            desc: 'The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.',
-          },
-          {
-            text: 'pop()',
-            desc: 'The pop() method removes the last element from an array and returns that element. This method changes the length of the array.',
 
-          },
           {
-            text: 'push()',
-            desc: 'The push() method adds one or more elements to the end of an array and returns the new length of the array.',
-          },
+            category: "cars",
+            list: [
+              {
+                text: 'applesconcat()',
+                desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+              },
+              {
+                text: 'applesindexOf()',
+                desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+
+              },
+              {
+                text: 'applesjoin()',
+                desc: 'The join() method joins all elements of an array into a string.',
+              },
+              {
+                text: 'appleslastIndexOf()',
+                desc: 'The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.',
+              },
+              {
+                text: 'applespop()',
+                desc: 'The pop() method removes the last element from an array and returns that element. This method changes the length of the array.',
+
+              },
+              {
+                text: 'applespush()',
+                desc: 'The push() method adds one or more elements to the end of an array and returns the new length of the array.',
+              },
+            ]
+
+
+          }
         ],
+
+
 
       }
     },
@@ -86,30 +117,30 @@
 </script>
 
 <style>
-  .list-of-items {
-    display: flex;
-    flex-direction: column;
-    max-width: 250px;
-  }
+  /*.list-of-items {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*max-width: 250px;*/
+  /*}*/
 
-  .single-item {
-    max-width: 250px;
-  }
+  /*.single-item {*/
+    /*max-width: 250px;*/
+  /*}*/
 
-  .item-text {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    border-bottom: 1px solid #e4e4e4;
-    padding: 0 16px;
-  }
+  /*.item-text {*/
+    /*font-size: 15px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    /*height: 40px;*/
+    /*border-bottom: 1px solid #e4e4e4;*/
+    /*padding: 0 16px;*/
+  /*}*/
 
-  .list-of-items .mu-icon {
-    display: block;
-    cursor: pointer;
-  }
+  /*.list-of-items .mu-icon {*/
+    /*display: block;*/
+    /*cursor: pointer;*/
+  /*}*/
 
   .toggle-list-item {
     position: relative;

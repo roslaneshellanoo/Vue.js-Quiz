@@ -1,23 +1,32 @@
 <template>
 
-  <div :title="item.text" class="toggle-list-item" :class="{ activeitem: isActive }">
+  <div  class="toggle-list-item" :class="{ activeitem: isActive }">
 
     <div class="item-text">
-      <span>
-        {{ item.text }}
-      </span>
-      <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
+
+      <div class="mu-sub-header">{{ item.category }}</div>
+
+      <div>
+        <div v-for="list in item.list">
+          {{ list.text }}
+          <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
       <!--<span @click="toggle" >-->
         <mu-icon slot="right" value="info"/>
+                <div v-if="isActive" class="item-desc">
+      {{list.desc}}
+    </div>
        </span>
+        </div>
+      </div>
+
     </div>
 
 
-    <div v-if="isActive" class="item-desc">
-      {{item.desc}}
-    </div>
+
 
   </div>
+
+
 </template>
 
 <script>
