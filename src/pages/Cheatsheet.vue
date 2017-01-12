@@ -8,7 +8,7 @@
 
 
 
-    <div v-for="item in items" class="single-item">
+    <div  class="single-item">
 
       <toggle-list-item  :item="item"></toggle-list-item>
 
