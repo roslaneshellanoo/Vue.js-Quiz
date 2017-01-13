@@ -4,17 +4,26 @@
   <div class="text-center">
     <h1>Javascript Cheat Sheet</h1>
   </div>
-  <div class="list-of-items mu-paper mu-paper-round mu-paper-1">
 
-    <div class="mu-sub-header">Array Methods</div>
 
-    <div v-for="item in items" class="single-item">
+  <mu-row gutter>
 
-      <toggle-list-item  :item="item"></toggle-list-item>
+    <mu-col width="100" tablet="50" desktop="33"
+            class="list-of-items mu-paper mu-paper-round mu-paper-1">
+      <div class="mu-sub-header">Array Methods</div>
+      <toggle-list-item v-for="item in items" class="single-item"  :item="item"></toggle-list-item>
+    </mu-col>
 
-    </div>
+    <mu-col width="100" tablet="50" desktop="33"
+            class="list-of-items mu-paper mu-paper-round mu-paper-1">
+      <div class="mu-sub-header">Array Objects</div>
+      <toggle-list-item v-for="item in apples" class="single-item"  :item="item"></toggle-list-item>
+    </mu-col>
 
-  </div>
+
+  </mu-row>
+
+
 </div>
 </template>
 
@@ -36,18 +45,6 @@
         isActive: false,
 
 
-
-
-
-//        reverse()
-//        shift()
-//        slice()
-//        sort()
-//        splice()
-//        toString()
-//        unshift()
-//        valueOf()
-
         items: [
           {
             text: 'concat()',
@@ -58,24 +55,22 @@
             desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
 
           },
+
+        ],
+
+        apples: [
           {
-            text: 'join()',
-            desc: 'The join() method joins all elements of an array into a string.',
+            text: 'concat()',
+            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
           },
           {
-            text: 'lastIndexOf()',
-            desc: 'The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.',
-          },
-          {
-            text: 'pop()',
-            desc: 'The pop() method removes the last element from an array and returns that element. This method changes the length of the array.',
+            text: 'indexOf()',
+            desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
 
           },
-          {
-            text: 'push()',
-            desc: 'The push() method adds one or more elements to the end of an array and returns the new length of the array.',
-          },
-        ],
+
+        ]
+
 
       }
     },
@@ -87,13 +82,11 @@
 
 <style>
   .list-of-items {
-    display: flex;
-    flex-direction: column;
-    max-width: 250px;
+    margin-bottom: 2rem;
   }
 
   .single-item {
-    max-width: 250px;
+
   }
 
   .item-text {
@@ -117,7 +110,7 @@
 
   .item-desc {
     position: absolute;
-    background: rgba(0, 0, 0, 0.81);
+    background: rgba(0, 0, 0, 0.89);
     color: #fff;
     padding: 1.5rem;
     display: block;
