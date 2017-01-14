@@ -14,7 +14,11 @@
       <toggle-list-item v-for="item in items" class="single-item"  :item="item"></toggle-list-item>
     </mu-col>
 
-
+    <mu-col width="100" tablet="50" desktop="33"
+            class="list-of-items mu-paper mu-paper-round mu-paper-1">
+      <div class="mu-sub-header">Array Methods</div>
+      <toggle-list-item v-for="item in apples" class="single-item"  :item="item"></toggle-list-item>
+    </mu-col>
 
   </mu-row>
 
@@ -25,7 +29,7 @@
 <script>
 
   import toggleList from '../components/toggleList.vue'
-  import  items from '../api/cheatsheet'
+  import  {Items, Apples} from '../api/cheatsheet'
 
   export default {
 
@@ -41,7 +45,8 @@
         isActive: false,
 
 
-        items: items
+        items: Items,
+        apples: Apples,
 
 
       }

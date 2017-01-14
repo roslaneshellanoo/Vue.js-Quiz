@@ -1,6 +1,5 @@
-const items = {
+const Items = [
 
-  items: [
     {
       text: 'concat()',
       desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
@@ -11,15 +10,15 @@ const items = {
 
     },
 
-  ],
 
 
 
-}
 
-const apples = {
+]
 
-  apples: [
+const Apples = [
+
+
     {
       text: '111concat()',
       desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
@@ -30,8 +29,12 @@ const apples = {
 
     },
 
-  ]
 
+
+]
+
+export  {
+  Items,
+  Apples
 }
 
-export default items
