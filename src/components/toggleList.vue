@@ -1,26 +1,30 @@
 <template>
 
 
+  <div  class="toggle-list-item" :class="{ activeitem: isActive }">
 
-  <div :title="item.text" class="toggle-list-item" :class="{ activeitem: isActive }">
+    {{ item.category }}
 
-    <div class="item-text">
+    <div v-for="list in item.list" class="wrap-cont">
+
+
+      <div class="item-text">
       <span>
-        {{ item.text }}
+        {{ list.text }}
       </span>
-      <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
+        <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
       <!--<span @click="toggle" >-->
         <mu-icon slot="right" value="info"/>
        </span>
-    </div>
+      </div>
 
 
-    <div v-if="isActive" class="item-desc">
-      {{item.desc}}
+      <div v-if="isActive" class="item-desc">
+        {{list.desc}}
+      </div>
     </div>
 
   </div>
-
 
 
 </template>

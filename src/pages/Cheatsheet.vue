@@ -10,15 +10,16 @@
 
     <mu-col width="100" tablet="50" desktop="33"
             class="list-of-items mu-paper mu-paper-round mu-paper-1">
+
       <div class="mu-sub-header">Array Methods</div>
-      <toggle-list-item v-for="item in items" class="single-item"  :item="item"></toggle-list-item>
+
+      <toggle-list-item v-for="item in items.fruits"
+                        class="single-item"
+                        :item="item">
+      </toggle-list-item>
+
     </mu-col>
 
-    <mu-col width="100" tablet="50" desktop="33"
-            class="list-of-items mu-paper mu-paper-round mu-paper-1">
-      <div class="mu-sub-header">Array Objects</div>
-      <toggle-list-item v-for="item in apples" class="single-item"  :item="item"></toggle-list-item>
-    </mu-col>
 
 
   </mu-row>
@@ -30,6 +31,7 @@
 <script>
 
   import toggleList from '../components/toggleList.vue'
+ // import Cheatsheet from '../api/cheatsheet'
 
   export default {
 
@@ -45,36 +47,84 @@
         isActive: false,
 
 
-        items: [
-          {
-            text: 'concat()',
-            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
-          },
-          {
-            text: 'indexOf()',
-            desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+        items: {
 
-          },
+          fruits: [
+            {
+              category: "apples",
+              list: [
+                {
+                  text: '11applesconcat()',
+                  desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                },
+                {
+                  text: '22applesindexOf()',
+                  desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
 
-        ],
+                }
 
-        apples: [
-          {
-            text: 'concat()',
-            desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
-          },
-          {
-            text: 'indexOf()',
-            desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+              ]
 
-          },
+            },
 
-        ]
+            {
+              category: "oranges",
+              list: [
+                {
+                  text: '33applesconcat()',
+                  desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                },
+                {
+                  text: '44applesindexOf()',
+                  desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+
+                }
+
+              ]
+
+            }
+          ],
+
+          cars: [
+            {
+              category: "honda",
+              list: [
+                {
+                  text: '11applesconcat()',
+                  desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                },
+                {
+                  text: '22applesindexOf()',
+                  desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+
+                }
+
+              ]
+
+            },
+
+            {
+              category: "mazda",
+              list: [
+                {
+                  text: '33applesconcat()',
+                  desc: 'The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                },
+                {
+                  text: '44applesindexOf()',
+                  desc: 'The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+
+                }
+
+              ]
+
+            }
+          ]
+        }
 
 
       }
     },
-
 
 
   }
@@ -109,7 +159,7 @@
   }
 
   .item-desc {
-    position: absolute;
+    /*position: absolute;*/
     background: rgba(0, 0, 0, 0.89);
     color: #fff;
     padding: 1.5rem;
