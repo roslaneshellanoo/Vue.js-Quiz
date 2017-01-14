@@ -2,7 +2,7 @@
 
   <div>
 
-    <mu-list class="sidebar-nav" @itemClick="docked ? '' : toggle()">
+    <mu-list class="sidebar-nav">
       <mu-list-item>
         <router-link to="/" exact>Home</router-link>
       </mu-list-item>

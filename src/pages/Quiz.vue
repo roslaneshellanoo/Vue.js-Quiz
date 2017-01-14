@@ -179,7 +179,7 @@
       },
 
       // Go to previous question
-      prev: ()=> {
+      prev: function() {
         this.questionIndex--;
         this.activeStep--;
       },
