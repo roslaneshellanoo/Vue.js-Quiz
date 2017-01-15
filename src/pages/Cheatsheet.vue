@@ -42,8 +42,8 @@
     data () {
 
       return {
-        isActive: false,
-
+        //isActive: false,
+        //es2015: false,
 
         items: Items,
         apples: Apples,
@@ -67,12 +67,15 @@
   }
 
   .item-text {
-    font-size: 15px;
+    font-size: 14px;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    height: 40px;
-    border-bottom: 1px solid #e4e4e4;
+    height: 35px;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.21);
     padding: 0 16px;
   }
 
@@ -112,5 +115,35 @@
     width: 0;
   }
 
+  .mu-badge-circle {
+    border-radius: 3px;
+    padding: 0;
+    width: 45px;
+    height: 17px;
+    overflow: hidden;
+  }
+
+  .item-text .mu-badge-float {
+    position: absolute;
+    top: 9px;
+    right: 43px;
+    background: #f9db3d;
+    color: #000;
+  }
+
+  .list-of-items .mu-sub-header {
+    color: rgba(96, 125, 139, 0.72);
+    font-size: 19px;
+    line-height: 60px;
+    padding-left: 16px;
+    width: 100%;
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(158, 158, 158, 0.21);
+    margin-bottom: 1rem;
+  }
+
+  .dark_theme .list-of-items .mu-sub-header {
+    color: rgba(193, 228, 245, 0.72);
+  }
 
 </style>

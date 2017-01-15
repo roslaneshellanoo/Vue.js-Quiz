@@ -10,7 +10,14 @@
       </span>
       <span @mouseenter="handleHover" @mouseleave="handleHoverExit">
       <!--<span @click="toggle" >-->
-        <mu-icon slot="right" value="info"/>
+        <mu-icon slot="right" value="info" :size="18" />
+
+      <em v-if="item.es2015" class="mu-badge mu-badge-float">
+        <span>
+          es2015
+        </span>
+      </em>
+
        </span>
     </div>
 
@@ -46,7 +53,8 @@
 
     data() {
       return {
-        isActive: false
+        isActive: false,
+        es2015: true
       }
     },
 
