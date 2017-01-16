@@ -29,7 +29,7 @@
 <script>
 
   import toggleList from '../components/toggleList.vue'
-  import  {Items, Apples} from '../api/cheatsheet'
+  import  {array_methods, Apples} from '../api/cheatsheet'
 
   export default {
 
@@ -45,7 +45,7 @@
         //isActive: false,
         //es2015: false,
 
-        items: Items,
+        items: array_methods,
         apples: Apples,
 
 
@@ -130,6 +130,11 @@
     background: #f9db3d;
     color: #000;
   }
+
+  .mu-badge-float.es2016-badge {
+    background: #FFC107;
+  }
+
 
   .list-of-items .mu-sub-header {
     color: rgba(96, 125, 139, 0.72);
