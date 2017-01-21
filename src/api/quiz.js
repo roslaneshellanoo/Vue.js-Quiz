@@ -1,5 +1,5 @@
 let
-  question1 =
+  question3 =
     `const store = new Vuex.Store({
     state: {
       count: 0
@@ -29,27 +29,27 @@ const quiz = {
   questions: [
 
     {
-      text: 'Inside which HTML element do we put the JavaScript?',
-      textcode: question1,
+      text: 'What is the correct keyword to declare a Variable?',
+
       responses: [
 
         {
-          text: '<javascript>',
+          text: 'for',
           id: 1,
           mark: false
         },
         {
-          text: '<scripting>',
+          text: 'foo',
           id: 2,
           mark: false
         },
         {
-          text: '<js>',
+          text: 'bar',
           id: 3,
           mark: false
         },
         {
-          text: '<script>',
+          text: 'var',
           id: 4,
           mark: true
         }
@@ -59,27 +59,27 @@ const quiz = {
     },
 
     {
-      text: "Что выведет этот код? ",
-      textcode: question2,
+      text: "Which of the following is a String ?",
+
       responses: [
 
         {
-          text: 'James',
+          text: '$This_is_string',
           id: 1,
           mark: false
         },
         {
-          text: 'John',
+          text: '"This is string"',
           id: 2,
           mark: true
         },
         {
-          text: 'undefined',
+          text: 'this is string...',
           id: 3,
           mark: false
         },
         {
-          text: 'error',
+          text: '@this is string',
           id: 4,
           mark: false
         }
@@ -91,6 +91,7 @@ const quiz = {
 
     {
       text: "Question 3",
+      textcode: question3,
       responses: [
 
         {

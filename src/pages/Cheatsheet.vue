@@ -1,35 +1,35 @@
 <template>
-<div class="wrap-ch">
+  <div class="wrap-ch">
 
-  <div class="text-center">
-    <h1>Javascript Cheat Sheet</h1>
+    <div class="text-center">
+      <h1>Javascript Cheat Sheet</h1>
+    </div>
+
+
+    <mu-row gutter>
+
+      <mu-col width="100" tablet="50" desktop="33"
+              class="list-of-items mu-paper mu-paper-round mu-paper-1">
+        <div class="mu-sub-header">Array Methods</div>
+        <toggle-list-item v-for="item in array_methods" class="single-item" :item="item"></toggle-list-item>
+      </mu-col>
+
+      <mu-col width="100" tablet="50" desktop="33"
+              class="list-of-items mu-paper mu-paper-round mu-paper-1">
+        <div class="mu-sub-header">Keywords</div>
+        <toggle-list-item v-for="item in keywords" class="single-item" :item="item"></toggle-list-item>
+      </mu-col>
+
+    </mu-row>
+
+
   </div>
-
-
-  <mu-row gutter>
-
-    <mu-col width="100" tablet="50" desktop="33"
-            class="list-of-items mu-paper mu-paper-round mu-paper-1">
-      <div class="mu-sub-header">Array Methods</div>
-      <toggle-list-item v-for="item in items" class="single-item"  :item="item"></toggle-list-item>
-    </mu-col>
-
-    <mu-col width="100" tablet="50" desktop="33"
-            class="list-of-items mu-paper mu-paper-round mu-paper-1">
-      <div class="mu-sub-header">Array Methods</div>
-      <toggle-list-item v-for="item in apples" class="single-item"  :item="item"></toggle-list-item>
-    </mu-col>
-
-  </mu-row>
-
-
-</div>
 </template>
 
 <script>
 
   import toggleList from '../components/toggleList.vue'
-  import  {array_methods, Apples} from '../api/cheatsheet'
+  import  {array_methods, keywords} from '../api/cheatsheet'
 
   export default {
 
@@ -45,13 +45,12 @@
         //isActive: false,
         //es2015: false,
 
-        items: array_methods,
-        apples: Apples,
+        array_methods,
+        keywords
 
 
       }
     },
-
 
 
   }
@@ -134,7 +133,6 @@
   .mu-badge-float.es2016-badge {
     background: #FFC107;
   }
-
 
   .list-of-items .mu-sub-header {
     color: rgba(96, 125, 139, 0.72);

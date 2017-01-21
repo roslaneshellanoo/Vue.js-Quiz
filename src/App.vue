@@ -4,7 +4,7 @@
 
     <sidebar-nav @close="toggleNav" :open="open" :docked="docked"/>
 
-    <mu-appbar title="Home" class="header-nav-bar"  :class="{'nav-hide': !open}">
+    <mu-appbar title="Home" class="header-nav-bar" :class="{'nav-hide': !open}">
       <mu-icon-button @click="toggleNav" icon='menu' slot="left"/>
       <router-link to="/" exact>Home</router-link>
       <router-link to="/quiz">Quiz</router-link>
@@ -12,7 +12,7 @@
 
 
       <mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"
-                 class="theme-switch"  />
+                 class="theme-switch"/>
 
     </mu-appbar>
 
@@ -31,6 +31,7 @@
 <script>
   import light from '!raw-loader!muse-ui/dist/theme-default.css'
   import dark from '!raw-loader!muse-ui/dist/theme-dark.css'
+
 
   import Home from './pages/Home.vue'
   import AppNavDrawer from './Navigation/AppNavDrawer.vue'
@@ -62,7 +63,6 @@
     methods: {
 
 
-
       toggleNav () {
         this.open = !this.open
       },
@@ -84,8 +84,8 @@
         console.log(styleEl)
       },
 
-      checkNum: function() {
-        if(this.theme_checked === true) {
+      checkNum: function () {
+        if (this.theme_checked === true) {
           this.changeTheme('light')
         } else {
           this.changeTheme('dark');
@@ -96,11 +96,14 @@
   }
 </script>
 
-<style>
+<style lang="sass">
 
+  $main-grey: #757e8e;
+  $main-blue: #3a5783;
+  $title-color: #3c414a;
 
   html {
-    font-family: Roboto, sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 100%;
     line-height: 1;
     -ms-text-size-adjust: 100%;
@@ -115,7 +118,7 @@
   }
 
   body {
-    font-family: Roboto, Helvetica, sans-serif;
+    font-family: 'PT Sans', sans-serif !important;
     font-size: 15px;
     background-color: #f2f3f5;
     margin: 0;
@@ -142,6 +145,7 @@
   }
 
   .mu-appbar.header-nav-bar {
+    background: $main-grey;
     position: fixed;
     z-index: 999;
     right: 0;
@@ -151,8 +155,6 @@
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-
-
   .header-nav-bar .mu-switch-label {
     font-size: 1rem;
     color: #fff;
@@ -161,7 +163,6 @@
   .header-nav-bar.nav-hide {
     left: 0;
   }
-
 
   .header-nav-bar a {
     color: #fff !important;
@@ -206,6 +207,7 @@
   .logo h4 {
     color: #463c7d;
     font-weight: 100;
+    font-size: 3.2rem;
   }
 
   .dark_theme .logo h4 {
@@ -226,7 +228,6 @@
     opacity: 0
   }
 
-
   .text-code {
     font-family: monospace;
     white-space: pre;
@@ -235,21 +236,17 @@
     padding: 0 2rem;
   }
 
-
   #app code[class*=language-], #app pre[class*=language-] {
-    font: 14px/17px Consolas,Lucida Console,Menlo,Monaco,monospace;
+    font: 14px/17px Consolas, Lucida Console, Menlo, Monaco, monospace;
     z-index: 0;
     text-shadow: none;
     margin: 0;
   }
 
-
   @media (max-width: 600px) {
     body {
       font-size: 14px
     }
-
-
 
     .header-nav-bar a {
       margin-right: 1em
@@ -286,5 +283,19 @@
     float: left;
   }
 
+  .quiz .mu-raised-button-primary {
+    background-color: $main-blue;
+  }
+
+  .quiz .mu-step-label.active .mu-step-label-circle,
+  .quiz .mu-step-label.completed .mu-step-label-circle {
+    background-color: $main-blue;
+  }
+
+  .quiz .mu-step-label.active .mu-step-label-icon,
+  .quiz .mu-step-label.completed .mu-step-label-icon,
+  .quiz .mu-radio-icon-checked{
+    color: $main-blue;
+  }
 
 </style>

@@ -5,10 +5,11 @@
 
       <router-link to="/" exact>
         <img src="../assets/exam.svg">
+        <h4 class="gradient-text">
+          <span>{ codQuiz }</span>
+        </h4>
       </router-link>
-      <h4 class="gradient-text">
-        <span>Codexam</span>
-      </h4>
+
     </div>
 
     <mu-divider/>

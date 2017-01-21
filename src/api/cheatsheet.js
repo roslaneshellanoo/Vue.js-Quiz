@@ -1,33 +1,4 @@
-/*
 
-
-
-
-
- forEach()
- indexOf()
- join()
- keys()
- lastIndexOf()
- map()
- pop()
- push()
- reduce()
- reduceRight()
- reverse()
- shift()
- slice()
- some()
- sort()
- splice()
- toLocaleString()
- toSource()
- toString()
- unshift()
- values()
- [@@iterator]()
- get Array[@@species]
- */
 
 const array_methods = [
 
@@ -226,25 +197,210 @@ const array_methods = [
 
 ]
 
-const Apples = [
+const keywords = [
 
 
   {
-    text: "111concat()",
+    text: "break",
     desc: "The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array."
   },
   {
-    text: "22indexOf()",
+    text: "case",
     desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
 
   },
 
+  {
+    text: "catch",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "class",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "const",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "continue",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "debugger",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "default",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },  {
+    text: "delete",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "do",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "else",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "export",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "extends",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "finally",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "for",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "function",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "import",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "in",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "instanceof",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "let",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "new",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "return",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "super",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "switch",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "this",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "throw",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "try",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "typeof",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "var",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "void",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "while",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "with",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
+  {
+    text: "yield",
+    desc: "The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+
+  },
 
 ]
 
 export  {
   array_methods,
-  Apples
+  keywords
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

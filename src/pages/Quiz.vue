@@ -32,23 +32,35 @@
 
       <!-- index is used to check with current question index -->
 
-      <div class="wrap-quiz-content" v-for="(question, index) in quiz.questions">
+
+
+      <div class="wrap-quiz-content" >
+
+        <div v-show="spinner" class="spinner">
+          <span>
+             <mu-circular-progress :size="40"/>
+          </span>
+        </div>
+
+
+        <div class="quiz-loop" v-for="(question, index) in quiz.questions">
+
+
         <!-- Hide all questions, show only the one with index === to current question index -->
         <div class="quiz-block" v-show="index === questionIndex">
-          <h4 class="spacing-bottom">
+          <h4 class="question-block mb3">
             <!--{{ questionIndex +1 }}.-->
-            <span v-html="question.text">
-
-                        </span>
+            <span v-html="question.text"></span>
           </h4>
-          <div class="wrap-text-code">
+
+          <div class="wrap-text-code" v-if="question.textcode">
              <pre><code class="language-js">{{ question.textcode }}</code></pre>
           </div>
 
 
-          <!--<mu-divider/>-->
-          <br>
-          <ul class="list-reset">
+          <mu-divider/>
+
+          <ul class="answers-block list-reset mt4">
             <li v-for="response in question.responses">
 
 
@@ -93,6 +105,10 @@
 
         </div>
       </div>
+      </div>
+
+
+
 
       <div v-show="questionIndex === quiz.questions.length">
         <h2>
@@ -134,6 +150,7 @@
 
       return {
 
+        spinner: false,
         activeStep: 0,
         quiz: quiz,
         // Store current question index
@@ -167,14 +184,22 @@
       // Go to next question
       next: function () {
 
-        if (this.userResponses[this.activeStep] === false) {
-          this.showSnackbar();
-        }
-        else {
-          this.questionIndex++;
-          this.activeStep++;
-          this.showToast();
-        }
+        this.spinner = true;
+        var _this = this;
+        setTimeout(function(){
+           _this.spinner = false;
+
+          if (_this.userResponses[_this.activeStep] === false) {
+            _this.showSnackbar();
+          }
+          else {
+            _this.questionIndex++;
+            _this.activeStep++;
+           //  _this.showToast();
+          }
+        }, 500);
+
+
 
       },
 
@@ -241,7 +266,11 @@
 </script>
 
 
-
+<style>
+  .quiz .mu-step-label {
+    height: 50px;
+  }
+</style>
 
 
 

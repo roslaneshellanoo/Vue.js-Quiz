@@ -1,4 +1,15 @@
-// 20. Typography
+
+@import "assets/sass/margins";
+@import "assets/sass/paddings";
+
+//  Colors
+// ==========================================================================
+
+$main-grey: #757e8e;
+$main-blue: #3a5783;
+$title-color: #3c414a;
+
+//  Typography
 // ==========================================================================
 
 $off-black: rgba(0, 0, 0, 0.87) !default;
@@ -31,6 +42,11 @@ strong { font-weight: 500; }
 small { font-size: 75%; }
 .light { font-weight: 300; }
 .thin { font-weight: 200; }
+
+
+.title-color {
+
+}
 
 // Font Weight
 .bold {
@@ -67,8 +83,8 @@ small { font-size: 75%; }
 
 .gradient-text {
   -webkit-background-clip: text;
-  background-image: -webkit-linear-gradient(left, #1de9b6, #2979ff);
-  background-image: linear-gradient(to right, #1de9b6, #2979ff);
+  background-image: -webkit-linear-gradient(left,  #3d8bff, #26559b);
+  background-image: linear-gradient(to right,  #3d8bff, #26559b);
   -webkit-text-fill-color: transparent;
 }
 
@@ -167,6 +183,36 @@ small { font-size: 75%; }
   box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
   padding: 2rem 3rem;
 }
+
+
+.spinner {
+  position: absolute;
+  margin: auto;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.86);
+  z-index: 999;
+  color: #000;
+
+  span {
+    display: table;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.wrap-quiz-content {
+  position: relative;
+}
+
+
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
