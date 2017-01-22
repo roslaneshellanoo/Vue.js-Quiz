@@ -21,7 +21,20 @@ setTimeout(function() {
   var name = "James";
   sayHi();
 }, 1000);
-`;
+`,
+
+  question4 =
+  `function() {
+    var a = 10;
+    if(a > 5) {
+        a = 7;
+    }
+    alert(a);
+}
+`
+
+
+  ;
 
 
 const quiz = {

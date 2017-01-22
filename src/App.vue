@@ -64,7 +64,8 @@
 
 
       toggleNav () {
-        this.open = !this.open
+        this.open = !this.open;
+
       },
 
       getThemeStyle: function () {
@@ -91,8 +92,35 @@
           this.changeTheme('dark');
 
         }
-      }
-    }
+      },
+
+      Resize(event) {
+          if(window.innerWidth > 993) {
+            this.open = true;
+          }
+          else {
+            this.open = false;
+          }
+
+      },
+
+
+    },
+
+    mounted() {
+
+      window.addEventListener('resize', this.Resize);
+
+      //Init
+      this.Resize()
+
+    },
+
+    destroyed () {
+      window.removeEventListener('resize', this.Resize)
+    },
+
+
   }
 </script>
 
