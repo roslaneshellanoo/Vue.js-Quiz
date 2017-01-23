@@ -186,7 +186,7 @@ small { font-size: 75%; }
 
 
 .spinner {
-  position: absolute;
+  position: fixed;
   margin: auto;
   display: block;
   height: 100%;
@@ -195,6 +195,8 @@ small { font-size: 75%; }
   background: rgba(255, 255, 255, 0.86);
   z-index: 999;
   color: #000;
+  left: 0;
+  top: 0;
 
   span {
     display: table;
