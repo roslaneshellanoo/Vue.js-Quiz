@@ -12,6 +12,9 @@
       <mu-list-item>
         <router-link to="/cheatsheet">JS Cheatsheet</router-link>
       </mu-list-item>
+      <mu-list-item>
+        <router-link to="/todo">Vue.js ToDo</router-link>
+      </mu-list-item>
     </mu-list>
 
     <mu-divider />

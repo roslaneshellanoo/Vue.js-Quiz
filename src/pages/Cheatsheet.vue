@@ -2,7 +2,7 @@
   <div class="wrap-ch">
 
     <div class="text-center">
-      <h1>Javascript Cheat Sheet</h1>
+      <h1 class="gradient-text">Javascript Cheat Sheet</h1>
     </div>
 
 

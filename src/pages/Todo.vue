@@ -15,7 +15,84 @@
           <h1 class="text-center gradient-text">Simple ToDo made with Vue.js</h1>
           <mu-divider/>
           <mu-content-block>
-         <p>fsdf</p>
+            <div class="v-for-complex">
+              <div id="myvueinstance" class="container">
+
+
+                <mu-list :value="value" @change="handleChange">
+
+
+                  <mu-list-item v-for="library in libraries"
+                                :title="library.text"
+                                :value="library"
+                                v-bind:class="[{ active: library.isActive }]"
+                  >
+
+
+                    <mu-checkbox class="demo-checkbox"
+                                 v-model="library.isActive"
+                                 slot="left"
+                                 uncheckIcon="visibility"
+                                 checkedIcon="visibility_off"
+                    />
+
+
+                    <!--<mu-icon value="call" color="indigo" slot="left"/>-->
+
+
+                    <mu-icon v-on:click="removeLibrary(library)"
+                             value="remove_circle"
+                             slot="right"
+                             color="red700"
+
+
+                    />
+
+
+                  </mu-list-item>
+
+
+                </mu-list>
+
+
+                <br/>
+
+                <div @keyup.enter="addLibrary">
+                  <mu-text-field v-model="newlibrary"
+                                 label="Add to library"
+                                 labelFloat/>
+
+
+                </div>
+
+
+                <mu-raised-button v-on:click="addLibrary"
+                                  label="Click to add library"
+                                  class="demo-raised-button spacing-bottom"
+                                  backgroundColor="blue500"/>
+
+
+                <mu-raised-button v-on:click="deleteLastLibrary"
+                                  label="Click to delete last library"
+                                  class="demo-raised-button spacing-bottom"
+                                  backgroundColor="deepOrange700"/>
+
+
+                <mu-raised-button v-on:click="deleteLibraries"
+                                  label="Click to delete all libraries"
+                                  class="demo-raised-button spacing-bottom"
+                                  backgroundColor="pink800"/>
+
+                <p></p>
+
+                <div class="row">
+
+
+                </div>
+
+              </div>
+
+            </div>
           </mu-content-block>
         </div>
 
@@ -128,4 +205,6 @@
   .mu-list .active {
     text-decoration: line-through;
   }
+
+
 </style>
