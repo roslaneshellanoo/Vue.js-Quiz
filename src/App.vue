@@ -11,8 +11,8 @@
       <!--<mu-icon-button icon='expand_more' slot="right"/>-->
 
       <div class="nav-title-logo text-center">
-        <span>
-          codequiz
+        <span  @click.native="open = false">
+          CODEQUIZ
         </span>
       </div>
 
@@ -137,7 +137,7 @@
   $title-color: #3c414a;
 
   html {
-    font-family: 'PT Sans', sans-serif;
+    /*font-family: 'PT Sans', sans-serif;*/
     font-size: 100%;
     line-height: 1;
     -ms-text-size-adjust: 100%;
@@ -152,7 +152,7 @@
   }
 
   body {
-    font-family: 'PT Sans', sans-serif !important;
+    /*font-family: 'PT Sans', sans-serif !important;*/
     font-size: 15px;
     background-color: #f2f3f5;
     margin: 0;
@@ -170,7 +170,7 @@
   }
 
   .wrapper {
-    padding-left: 210px;
+    padding-left: 240px;
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -185,7 +185,7 @@
     right: 0;
     top: 0;
     width: auto;
-    left: 210px;
+    left: 240px;
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -230,12 +230,18 @@
     float: right
   }
 
+  .header-nav-bar .mu-appbar-title {
+    font-size: 24px;
+    font-family: roboto;
+    font-weight: 100;
+  }
+
   .mu-drawer.app-drawer {
-    width: 210px;
+    width: 240px;
   }
 
   .logo {
-    padding: 2rem 0;
+    padding: .4rem 0;
   }
 
   .logo img {

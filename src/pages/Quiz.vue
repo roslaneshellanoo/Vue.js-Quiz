@@ -1,5 +1,6 @@
 <template>
   <div class="quiz">
+
     <div class="container">
 
       <h1 class="text-center gradient-text fw300 m-m0">Javascript Quiz</h1>

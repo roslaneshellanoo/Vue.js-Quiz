@@ -1,11 +1,11 @@
 <template>
   <div class="home">
 
-    <!--<p>{{ count }}</p>-->
-    <!--<p>-->
-      <!--<button @click="increment">+</button>-->
-      <!--<button @click="decrement">-</button>-->
-    <!--</p>-->
+    <p>{{ count }}</p>
+    <p>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </p>
 
     <div class="container">
 

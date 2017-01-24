@@ -22,6 +22,7 @@
     <mu-list>
       <mu-sub-header>Code Quizes</mu-sub-header>
       <mu-list-item  title="Javascript Quiz" toggleNested :open="open">
+        <!--<mu-avatar slot="left" color="grey900" backgroundColor="amber500" :size="30" :iconSize="10">JS</mu-avatar>-->
         <mu-list-item slot="nested" title="Jquery"></mu-list-item>
         <mu-list-item slot="nested" title="React.js"></mu-list-item>
         <mu-list-item slot="nested" title="Vue.js"></mu-list-item>

@@ -2,11 +2,16 @@
   <mu-drawer @close="handleClose" :open="open" :docked="docked" class="app-drawer" :zDepth="1">
 
     <div class="logo text-center">
+      <div class="pull-left" >
+        <mu-icon-button iconClass="black" icon='menu' slot="left" />
+      </div>
 
       <router-link to="/" exact>
-        <img src="../assets/exam.svg">
+        <!--<img src="../assets/js.svg">-->
+
         <h4 class="gradient-text">
-          <span>{ codQuiz }</span>
+
+          <span>CODEQUIZ</span>
         </h4>
       </router-link>
 

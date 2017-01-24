@@ -12,6 +12,10 @@ $main-grey: #757e8e;
 $main-blue: #3a5783;
 $title-color: #3c414a;
 
+.black {
+  color: black;
+}
+
 //  Typography
 // ==========================================================================
 
@@ -226,5 +230,12 @@ small { font-size: 75%; }
   position: relative;
 }
 
+.mu-item-content a {
+  color:  rgba(0,0,0,.87);
+}
+
+.mu-item-content .mu-item-title {
+  font-size: 15px;
+}
 
 @import "assets/sass/codehighlight";
