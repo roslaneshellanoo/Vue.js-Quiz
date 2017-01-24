@@ -4,11 +4,17 @@
 
     <sidebar-nav @close="toggleNav" :open="open" :docked="docked"/>
 
-    <mu-appbar title="Home" class="header-nav-bar" :class="{'nav-hide': !open}">
+    <mu-appbar title="" class="header-nav-bar" :class="{'nav-hide': !open}">
       <mu-icon-button @click="toggleNav" icon='menu' slot="left"/>
-      <router-link to="/" exact>Home</router-link>
-      <router-link to="/quiz">Quiz</router-link>
-      <mu-icon-button icon='expand_more' slot="right"/>
+      <!--<router-link to="/" exact>Home</router-link>-->
+      <!--<router-link to="/quiz">Quiz</router-link>-->
+      <!--<mu-icon-button icon='expand_more' slot="right"/>-->
+
+      <div class="nav-title-logo text-center">
+        <span>
+          codequiz
+        </span>
+      </div>
 
 
       <mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"
@@ -164,7 +170,7 @@
   }
 
   .wrapper {
-    padding-left: 256px;
+    padding-left: 210px;
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -179,7 +185,7 @@
     right: 0;
     top: 0;
     width: auto;
-    left: 256px;
+    left: 210px;
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -222,6 +228,10 @@
     font-size: .9em;
     margin: 0;
     float: right
+  }
+
+  .mu-drawer.app-drawer {
+    width: 210px;
   }
 
   .logo {
