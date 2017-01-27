@@ -22,6 +22,8 @@
 
     </mu-row>
 
+    {{ array_methods2[1] }}
+
 
   </div>
 </template>
@@ -30,6 +32,19 @@
 
   import toggleList from '../components/toggleList.vue'
   import  {array_methods, keywords} from '../api/cheatsheet'
+
+
+  import Vue from 'vue'
+  import Vuex from 'vuex'
+
+  Vue.use(Vuex);
+
+  const store = new Vuex.Store({
+    state: {
+      array_methods,
+      keywords
+    },
+  });
 
   export default {
 
@@ -49,6 +64,12 @@
         keywords
 
 
+      }
+    },
+
+    computed: {
+      array_methods2(){
+        return store.state.array_methods
       }
     },
 
