@@ -2,10 +2,10 @@
   <div id="app" :class="{ dark_theme: theme_checked, light_theme: !theme_checked }">
 
 
-    <sidebar-nav @close="toggleNav" :open="open" :docked="docked"/>
+    <sidebar-nav @close="toggleNav" :open="this.$store.state.open" :docked="docked"/>
 
-    <mu-appbar title="" class="header-nav-bar" :class="{'nav-hide': !open}">
-      <mu-icon-button @click="toggleNav" icon='menu' slot="left"/>
+    <mu-appbar title="" class="header-nav-bar" :class="{'nav-hide': !this.$store.state.open}">
+      <mu-icon-button @click="openChange" icon='menu' slot="left"/>
       <!--<router-link to="/" exact>Home</router-link>-->
       <!--<router-link to="/quiz">Quiz</router-link>-->
       <!--<mu-icon-button icon='expand_more' slot="right"/>-->
@@ -22,11 +22,15 @@
 
     </mu-appbar>
 
-    <div class="wrapper" :class="{'nav-hide': !open}">
+    <div class="wrapper" :class="{'nav-hide': !this.$store.state.open}">
       <div class="container">
         <transition name="fade" mode="out-in">
           <router-view></router-view>
         </transition>
+
+        <button @click="openChange">
+          App Change state open ...
+        </button>
       </div>
     </div>
 
@@ -42,6 +46,8 @@
   import Home from './pages/Home.vue'
   import AppNavDrawer from './Navigation/AppNavDrawer.vue'
 
+  import {store} from './store/store'
+
 
   export default {
     name: 'app',
@@ -51,6 +57,7 @@
     },
     data() {
       return {
+        sharedState: store.state,
         open: true,
         docked: true,
         theme: 'dark',
@@ -62,11 +69,11 @@
       };
     },
 
-    created: function () {
-
-    },
 
     methods: {
+      openChange() {
+        this.$store.commit('openChange')
+      },
 
 
       toggleNav () {
@@ -113,12 +120,18 @@
 
     },
 
+
+
     mounted() {
 
       window.addEventListener('resize', this.Resize);
 
       //Init
       this.Resize()
+
+
+
+
 
     },
 

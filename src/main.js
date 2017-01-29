@@ -3,10 +3,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from './router'
-import App from './App'
-
-
-
+import {store} from './store/store'
+import * as App from './App'
 
 
 import MuseUI from 'muse-ui'
@@ -17,8 +15,6 @@ Vue.use(Vuex);
 Vue.use(MuseUI);
 
 
-
-
 /* eslint-disable no-new */
 
 const app = new Vue({
@@ -27,6 +23,6 @@ const app = new Vue({
     // all components already registered
   },
   router,
-
+  store,
   render: h => h(App)
 });

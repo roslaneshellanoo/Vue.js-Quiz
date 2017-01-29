@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 import Home from '../pages/Home.vue'
 import Quiz from '../pages/Quiz.vue'
 import Cheatsheet from '../pages/Cheatsheet.vue'
-import Todo from '../pages/Todo.vue'
+//import Todo from '../pages/Todo.vue'
 
 
 export default new VueRouter({
@@ -26,10 +26,10 @@ export default new VueRouter({
       path: '/cheatsheet',
       component: Cheatsheet
     },
-    {
-      path: '/todo',
-      component: Todo
-    }
+    // {
+    //   path: '/todo',
+    //   component: Todo
+    // }
 
   ]
 })

@@ -1,11 +1,6 @@
 <template>
   <div class="home">
 
-    <!--<p>{{ count }}</p>-->
-    <!--<p>-->
-      <!--<button @click="increment">+</button>-->
-      <!--<button @click="decrement">-</button>-->
-    <!--</p>-->
 
     <div class="container">
 
@@ -21,6 +16,7 @@
           <mu-divider/>
           <mu-content-block>
          <p>fsdf</p>
+            <button @click="openChange">Change open state...</button>
           </mu-content-block>
         </div>
 
@@ -34,20 +30,7 @@
 
 
 <script>
-  import Vue from 'vue'
-  import Vuex from 'vuex'
-
-  Vue.use(Vuex);
-
-  const store = new Vuex.Store({
-    state: {
-      count: 0
-    },
-    mutations: {
-      increment: state => state.count++,
-      decrement: state => state.count--
-    }
-  });
+import {store} from '../store/store'
 
   export default {
     name: 'home',
@@ -56,74 +39,25 @@
 
       return {
 
-        libraries: [],
-        newlibrary: '',
-        value: 1,
-        activeClass: 'active',
-
-        isActive: false
+        open: store.state.open,
+        sharedState: store.state
       }
 
     },
 
-    computed: {
-      count () {
-        return store.state.count
-      }
-    },
 
     methods: {
 
-      increment () {
-        store.commit('increment')
-      },
-      decrement () {
-        store.commit('decrement')
+      openChange() {
+        this.$store.commit('openChange')
       },
 
 
-      handleChange (val) {
-        this.value = val
-      },
-      addLibrary: function () {
-
-        //trim() is used to remove whitespace from both ends of a string
-        var task = this.newlibrary.trim();
-        //if task is not an empty string
-        if (task) {
-          //Push an object containing the task to the taskList array
-          this.libraries.push({
-            text: task,
-            isActive: false
-          });
-          //Reset newTask to an empty string so the input field is cleared
-          this.newlibrary = "";
-
-
-        }
-
-
-      },
-
-      deleteLibraries: function () {
-        this.libraries = [];
-      },
-
-      deleteLastLibrary: function () {
-        this.libraries.pop();
-      },
-
-      removeLibrary: function (library) {
-        this.libraries.splice(this.libraries.indexOf(library), 1);
-        this.libraries.indexOf(library)
-
-      },
-
-      markLibrary: function () {
-        //this.libraries.classList.toggle('aaaaaaaaaa');
-        this.isActive = !this.isActive;
-      }
     },
+
+    mounted() {
+      this.$store.state.open = false
+    }
 
   }
 </script>
