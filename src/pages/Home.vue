@@ -4,17 +4,18 @@
 
       <div class="col-xs-12">
 
-        <div class="">
-          <h1 class="text-center gradient-text">
-          Test your skills and improve your knowledge!
-          </h1>
-          <div class="text-center">
-            <img src="../assets/coding.svg" alt="" style="max-width: 300px">
-          </div>
-          <mu-divider/>
-          <mu-content-block>
+        <div class="wrap-home">
 
-          </mu-content-block>
+          <div class="text-center">
+            <img src="../assets/code-1.png" alt="" style="max-width: 300px">
+          </div>
+
+          <h4 class="home-title text-center white">
+          Test your skills and <br> improve your knowledge!
+          </h4>
+
+
+
         </div>
 
         <!---------------------------------------------->
@@ -61,6 +62,15 @@ import {store} from '../store/store'
 
 
 <style>
+
+  body {
+    padding-top: 0;
+  }
+
+  .mu-appbar.header-nav-bar {
+    background: transparent!important;
+  }
+
   .mu-list .active {
     text-decoration: line-through;
   }
@@ -71,5 +81,10 @@ import {store} from '../store/store'
     background-image: -moz-linear-gradient(top, #b16cf5, #134bb3);
     background-image: -o-linear-gradient(top, #b16cf5, #134bb3);
     background-image: linear-gradient(to bottom, #b16cf5, #134bb3);
+    padding-top: 7rem;
+  }
+
+  .wrap-home {
+    padding: 4rem 0;
   }
 </style>

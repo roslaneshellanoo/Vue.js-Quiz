@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
     state: {
         open: true,
         docked: true,
+        currentRoute: window.location.pathname
     },
     mutations: {
 
