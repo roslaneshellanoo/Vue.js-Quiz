@@ -23,15 +23,12 @@
     </mu-appbar>
 
     <div class="wrapper" :class="{'nav-hide': !this.$store.state.open}">
-      <div class="container">
+
         <transition name="fade" mode="out-in">
           <router-view></router-view>
         </transition>
 
-        <button @click="openChange">
-          App Change state open ...
-        </button>
-      </div>
+
     </div>
 
 
@@ -169,11 +166,11 @@
     font-size: 15px;
     background-color: #f2f3f5;
     margin: 0;
-    padding-top: 55px
+    padding-top: 43px;
   }
 
   #app {
-    padding: 2rem 0;
+    padding: 0;
   }
 
   .container {

@@ -8,9 +8,9 @@
       </mu-list-item>
       <mu-list-item>
         <router-link @click="openChange" to="/quiz" tag="li">
-          <a href="">
+
             Javascript Quiz
-          </a>
+
 
         </router-link>
       </mu-list-item>

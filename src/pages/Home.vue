@@ -2,8 +2,6 @@
   <div class="home">
 
 
-    <div class="container">
-
       <div class="col-xs-12">
 
         <div class="">
@@ -15,15 +13,14 @@
           </div>
           <mu-divider/>
           <mu-content-block>
-         <p>fsdf</p>
-            <button @click="openChange">Change open state...</button>
+
           </mu-content-block>
         </div>
 
         <!---------------------------------------------->
 
       </div>
-    </div>
+
 
   </div>
 </template>
@@ -66,5 +63,13 @@ import {store} from '../store/store'
 <style>
   .mu-list .active {
     text-decoration: line-through;
+  }
+
+  .home {
+    background-color: #b16cf5;
+    background-image: -webkit-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: -moz-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: -o-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: linear-gradient(to bottom, #b16cf5, #134bb3);
   }
 </style>
