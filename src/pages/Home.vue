@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-
-
       <div class="col-xs-12">
 
         <div class="wrap-home">
@@ -13,15 +11,8 @@
           <h4 class="home-title text-center white">
           Test your skills and <br> improve your knowledge!
           </h4>
-
-
-
         </div>
-
-        <!---------------------------------------------->
-
       </div>
-
 
   </div>
 </template>
@@ -45,12 +36,9 @@ import {store} from '../store/store'
 
 
     methods: {
-
       openChange() {
         this.$store.commit('openChange')
       },
-
-
     },
 
     mounted() {
