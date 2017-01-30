@@ -1,53 +1,34 @@
 <template>
   <div class="home">
 
-    <p>{{ count }}</p>
-    <p>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-    </p>
-
-    <div class="container">
 
       <div class="col-xs-12">
 
-        <div class="">
-          <h1 class="text-center gradient-text">
-          Test your skills and improve your knowledge!
-          </h1>
+        <div class="wrap-home">
+
           <div class="text-center">
-            <img src="../assets/coding.svg" alt="" style="max-width: 300px">
+            <img src="../assets/code-1.png" alt="" style="max-width: 300px">
           </div>
-          <mu-divider/>
-          <mu-content-block>
-         <p>fsdf</p>
-          </mu-content-block>
+
+          <h4 class="home-title text-center white">
+          Test your skills and <br> improve your knowledge!
+          </h4>
+
+
+
         </div>
 
         <!---------------------------------------------->
 
       </div>
-    </div>
+
 
   </div>
 </template>
 
 
 <script>
-  import Vue from 'vue'
-  import Vuex from 'vuex'
-
-  Vue.use(Vuex);
-
-  const store = new Vuex.Store({
-    state: {
-      count: 0
-    },
-    mutations: {
-      increment: state => state.count++,
-      decrement: state => state.count--
-    }
-  });
+import {store} from '../store/store'
 
   export default {
     name: 'home',
@@ -56,81 +37,54 @@
 
       return {
 
-        libraries: [],
-        newlibrary: '',
-        value: 1,
-        activeClass: 'active',
-
-        isActive: false
+        open: store.state.open,
+        sharedState: store.state
       }
 
     },
 
-    computed: {
-      count () {
-        return store.state.count
-      }
-    },
 
     methods: {
 
-      increment () {
-        store.commit('increment')
-      },
-      decrement () {
-        store.commit('decrement')
+      openChange() {
+        this.$store.commit('openChange')
       },
 
 
-      handleChange (val) {
-        this.value = val
-      },
-      addLibrary: function () {
-
-        //trim() is used to remove whitespace from both ends of a string
-        var task = this.newlibrary.trim();
-        //if task is not an empty string
-        if (task) {
-          //Push an object containing the task to the taskList array
-          this.libraries.push({
-            text: task,
-            isActive: false
-          });
-          //Reset newTask to an empty string so the input field is cleared
-          this.newlibrary = "";
-
-
-        }
-
-
-      },
-
-      deleteLibraries: function () {
-        this.libraries = [];
-      },
-
-      deleteLastLibrary: function () {
-        this.libraries.pop();
-      },
-
-      removeLibrary: function (library) {
-        this.libraries.splice(this.libraries.indexOf(library), 1);
-        this.libraries.indexOf(library)
-
-      },
-
-      markLibrary: function () {
-        //this.libraries.classList.toggle('aaaaaaaaaa');
-        this.isActive = !this.isActive;
-      }
     },
+
+    mounted() {
+      this.$store.state.open = false
+    }
 
   }
 </script>
 
 
 <style>
+
+  body {
+    padding-top: 0;
+  }
+
+  .home .mu-appbar.header-nav-bar {
+    background: transparent;
+  }
+
   .mu-list .active {
     text-decoration: line-through;
+  }
+
+  .home {
+    background-color: #b16cf5;
+    background-image: -webkit-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: -moz-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: -o-linear-gradient(top, #b16cf5, #134bb3);
+    background-image: linear-gradient(to bottom, #b16cf5, #134bb3);
+    padding-top: 7rem;
+  }
+
+  .wrap-home {
+    padding: 4rem 0;
   }
 </style>
