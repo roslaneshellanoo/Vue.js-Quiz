@@ -15,16 +15,19 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      name: "home"
     },
 
     {
       path: '/quiz',
-      component: Quiz
+      component: Quiz,
+      name: "quiz"
     },
     {
       path: '/cheatsheet',
-      component: Cheatsheet
+      component: Cheatsheet,
+      name: "cheatsheet"
     },
     // {
     //   path: '/todo',

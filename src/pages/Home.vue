@@ -67,8 +67,8 @@ import {store} from '../store/store'
     padding-top: 0;
   }
 
-  .mu-appbar.header-nav-bar {
-    background: transparent!important;
+  .home .mu-appbar.header-nav-bar {
+    background: transparent;
   }
 
   .mu-list .active {

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ dark_theme: theme_checked, light_theme: !theme_checked }">
+  <div id="app" :class="[ this.$route.name + ' page' , {dark_theme: theme_checked, light_theme: !theme_checked}]">
 
 
     <sidebar-nav @close="toggleNav" :open="this.$store.state.open" :docked="docked"/>
@@ -54,6 +54,7 @@
     },
     data() {
       return {
+        routeClass: this.$route.name,
         sharedState: store.state,
         open: true,
         docked: true,
@@ -125,9 +126,7 @@
 
       //Init
       this.Resize()
-
-
-
+      console.info(this.$route.name)
 
 
     },
