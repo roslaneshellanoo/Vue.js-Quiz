@@ -1,33 +1,161 @@
 <template>
   <div class="home">
-      <div class="col-xs-12">
+    <div class="col-xs-12">
 
-        <div class="wrap-home">
+      <div class="wrap-home top-block">
 
-          <div class="text-center">
-            <img src="../assets/code-1.png" alt="" style="max-width: 300px">
+        <div class="text-center mb3">
+          <img src="../assets/logo.svg" alt="" style="max-width: 300px">
+        </div>
+
+        <h4 class="home-title text-center white mb4">
+          Test your skills and <br> improve your knowledge!
+        </h4>
+      </div>
+
+      <div class="middle-block">
+        <div class="container">
+
+          <div class="choose-title">
+            <h4 class="main-grey">
+              Choose Quiz
+            </h4>
           </div>
 
-          <h4 class="home-title text-center white">
-          Test your skills and <br> improve your knowledge!
-          </h4>
+          <div class="py4">
+            <mu-row gutter>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/js.svg"/>
+                    <h4>
+                      Javascript
+                    </h4>
+                    <h4 class="main-grey">
+                      24 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/vuejs.svg"/>
+                    <h4>
+                      VueJS
+                    </h4>
+                    <h4 class="main-grey">
+                      34 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/nodejs.svg"/>
+                    <h4>
+                      NodeJS
+                    </h4>
+                    <h4 class="main-grey">
+                      17 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+            </mu-row>
+
+            <mu-row gutter>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/react.svg"/>
+                    <h4>
+                      React
+                    </h4>
+                    <h4 class="main-grey">
+                      24 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/python.svg"/>
+                    <h4>
+                      Python
+                    </h4>
+                    <h4 class="main-grey">
+                      24 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+              <mu-col width="100" tablet="30" desktop="30">
+                <mu-card>
+                  <mu-card-text>
+                    <img class="pull-left mr3" src="../assets/code-icons/jquery.svg"/>
+                    <h4>
+                      jQuery
+                    </h4>
+                    <h4 class="main-grey">
+                      24 Questions
+                    </h4>
+                  </mu-card-text>
+                  <mu-card-actions>
+                    <!--<mu-flat-button label="click here"/>-->
+
+                  </mu-card-actions>
+                </mu-card>
+              </mu-col>
+
+            </mu-row>
+
+          </div>
         </div>
       </div>
+    </div>
 
   </div>
 </template>
 
 
 <script>
-import {store} from '../store/store'
+  import {store} from '../store/store'
 
   export default {
     name: 'home',
 
     data() {
-
       return {
-
         open: store.state.open,
         sharedState: store.state
       }
@@ -49,30 +177,70 @@ import {store} from '../store/store'
 </script>
 
 
-<style>
+<style lang="sass">
 
   body {
     padding-top: 0;
   }
 
+  .home {
+    background: #d4ddec;
+  }
+
+  .home .container {
+    position: relative;
+    background: #ffffff;
+  }
+
+  @media (min-width: 993px) {
+    .home .container {
+      padding: 0 5rem;
+    }
+  }
+
   .home .mu-appbar.header-nav-bar {
     background: transparent;
+    box-shadow: none;
   }
 
   .mu-list .active {
     text-decoration: line-through;
   }
 
-  .home {
+  .wrap-home {
     background-color: #b16cf5;
-    background-image: -webkit-linear-gradient(top, #b16cf5, #134bb3);
-    background-image: -moz-linear-gradient(top, #b16cf5, #134bb3);
-    background-image: -o-linear-gradient(top, #b16cf5, #134bb3);
-    background-image: linear-gradient(to bottom, #b16cf5, #134bb3);
-    padding-top: 7rem;
+    background-image: linear-gradient(to left, #b16cf5, #134bb3);
+    background-color: #b16cf5;
+    background-image: radial-gradient(circle farthest-side at center bottom, #4ab3de, #134bb3 125%);
+    padding: 9rem 0;
   }
 
-  .wrap-home {
-    padding: 4rem 0;
+  .home-title {
+    font-size: 36px;
+  }
+
+  .choose-title {
+    position: absolute;
+    top: -7.7rem;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    border-bottom: 2px solid #f1f1f1;
+    padding: 1.5rem 3rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .middle-block .col {
+    margin-bottom: 3rem;
+  }
+
+  .middle-block .mu-card {
+    border-radius: 5px;
+    transition: all 350ms ease;
+  }
+
+  .middle-block .mu-card:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451);
   }
 </style>

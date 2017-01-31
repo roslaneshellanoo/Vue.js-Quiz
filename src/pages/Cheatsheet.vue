@@ -44,11 +44,8 @@
       return {
         //isActive: false,
         //es2015: false,
-
         array_methods,
         keywords
-
-
       }
     },
 

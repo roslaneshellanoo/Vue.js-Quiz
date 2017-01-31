@@ -142,7 +142,7 @@
 <style lang="sass">
 
   .nav-title-logo.text-left {
-    font-size: 15px;
+    font-size: 24px;
   }
 
 
