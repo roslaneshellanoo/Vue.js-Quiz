@@ -30,9 +30,12 @@
                 <mu-card>
                   <mu-card-text>
                     <img class="pull-left mr3" src="../assets/code-icons/js.svg"/>
-                    <h4>
-                      Javascript
-                    </h4>
+                    <router-link to="/quiz" >
+                      <h4>
+                        Javascript
+                      </h4>
+                    </router-link>
+
                     <h4 class="main-grey">
                       24 Questions
                     </h4>
@@ -237,6 +240,9 @@
     background-image: linear-gradient(to left, #b16cf5, #134bb3);
     background-color: #b16cf5;
     background-image: radial-gradient(circle farthest-side at center bottom, #4ab3de, #134bb3 125%);
+
+    background: url(http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg);
+    background-size: cover;
     padding: 9rem 0;
     position: relative;
   }

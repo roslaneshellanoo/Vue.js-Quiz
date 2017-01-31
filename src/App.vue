@@ -15,22 +15,17 @@
           CODEQUIZ
         </span>
       </div>
-
-
-      <mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"
-                 class="theme-switch"/>
+      <!--<mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"-->
+                 <!--class="theme-switch"/>-->
+      <mu-icon-button @click="openChange" icon='android' slot="right"/>
 
     </mu-appbar>
 
     <div class="wrapper" :class="{'nav-hide': !this.$store.state.open}">
-
         <transition name="fade" mode="out-in">
           <router-view></router-view>
         </transition>
-
-
     </div>
-
 
   </div>
 </template>
