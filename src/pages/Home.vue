@@ -240,9 +240,9 @@
     background-image: linear-gradient(to left, #b16cf5, #134bb3);
     background-color: #b16cf5;
     background-image: radial-gradient(circle farthest-side at center bottom, #4ab3de, #134bb3 125%);
-
-    background: url(http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg);
-    background-size: cover;
+    /*background: url(http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg);*/
+    /*background-size: cover;*/
+    background-attachment: fixed;
     padding: 9rem 0;
     position: relative;
   }
