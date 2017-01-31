@@ -2,8 +2,9 @@
   <div class="home">
     <div class="col-xs-12">
 
-      <div class="wrap-home top-block">
 
+      <div class="wrap-home top-block">
+        <div id="particles-js"></div>
         <div class="text-center mb3">
           <img src="../assets/logo.svg" alt="" style="max-width: 300px">
         </div>
@@ -149,6 +150,9 @@
 
 
 <script>
+
+  import {particlesJS} from '../plugins/particles'
+  import {particlesData} from '../plugins/particles-data'
   import {store} from '../store/store'
 
   export default {
@@ -170,7 +174,15 @@
     },
 
     mounted() {
-      this.$store.state.open = false
+
+      this.$store.state.open = false;
+      this.$nextTick(function() {
+        window.particlesJS("particles-js", particlesData);
+      });
+    },
+
+    updated() {
+      // window.particlesJS("particles-js", particlesData);
     }
 
   }
@@ -191,6 +203,19 @@
     position: relative;
     background: #ffffff;
   }
+
+  .home #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .home #particles-js canvas {
+    width: 100%;
+    height: 100%;
+  }
+
 
   @media (min-width: 993px) {
     .home .container {
@@ -213,6 +238,7 @@
     background-color: #b16cf5;
     background-image: radial-gradient(circle farthest-side at center bottom, #4ab3de, #134bb3 125%);
     padding: 9rem 0;
+    position: relative;
   }
 
   .home-title {

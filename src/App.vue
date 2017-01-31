@@ -125,8 +125,8 @@
       window.addEventListener('resize', this.Resize);
 
       //Init
-      this.Resize()
-      console.info(this.$route.name)
+      this.Resize();
+      // console.info(this.$route.name)
 
 
     },
