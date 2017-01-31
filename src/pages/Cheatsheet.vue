@@ -1,28 +1,30 @@
 <template>
-  <div class="wrap-ch">
 
-    <div class="text-center">
-      <h1 class="gradient-text">Javascript Cheat Sheet</h1>
+  <div class="cheatsheet wrap-ch">
+
+    <div class="container">
+      <div class="text-center">
+        <h1 class="gradient-text">Javascript Cheat Sheet</h1>
+      </div>
+
+
+      <mu-row gutter>
+
+        <mu-col width="100" tablet="50" desktop="33"
+                class="list-of-items mu-paper mu-paper-round mu-paper-1">
+          <div class="mu-sub-header">Array Methods</div>
+          <toggle-list-item v-for="item in array_methods" class="single-item" :item="item"></toggle-list-item>
+        </mu-col>
+
+        <mu-col width="100" tablet="50" desktop="33"
+                class="list-of-items mu-paper mu-paper-round mu-paper-1">
+          <div class="mu-sub-header">Keywords</div>
+          <toggle-list-item v-for="item in keywords" class="single-item" :item="item"></toggle-list-item>
+        </mu-col>
+
+      </mu-row>
+
     </div>
-
-
-    <mu-row gutter>
-
-      <mu-col width="100" tablet="50" desktop="33"
-              class="list-of-items mu-paper mu-paper-round mu-paper-1">
-        <div class="mu-sub-header">Array Methods</div>
-        <toggle-list-item v-for="item in array_methods" class="single-item" :item="item"></toggle-list-item>
-      </mu-col>
-
-      <mu-col width="100" tablet="50" desktop="33"
-              class="list-of-items mu-paper mu-paper-round mu-paper-1">
-        <div class="mu-sub-header">Keywords</div>
-        <toggle-list-item v-for="item in keywords" class="single-item" :item="item"></toggle-list-item>
-      </mu-col>
-
-    </mu-row>
-
-
   </div>
 </template>
 

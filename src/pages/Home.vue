@@ -26,15 +26,17 @@
           <div class="py4">
             <mu-row gutter>
 
+
               <mu-col width="100" tablet="30" desktop="30">
+                <router-link to="/quiz" >
                 <mu-card>
                   <mu-card-text>
                     <img class="pull-left mr3" src="../assets/code-icons/js.svg"/>
-                    <router-link to="/quiz" >
+
                       <h4>
                         Javascript
                       </h4>
-                    </router-link>
+
 
                     <h4 class="main-grey">
                       24 Questions
@@ -45,7 +47,9 @@
 
                   </mu-card-actions>
                 </mu-card>
+                </router-link>
               </mu-col>
+
 
               <mu-col width="100" tablet="30" desktop="30">
                 <mu-card>

@@ -45,6 +45,14 @@ body {
 }
 
 #app {
+
+}
+
+.page{
+  padding-top: 10rem;
+}
+
+.page.home {
   padding: 0;
 }
 
@@ -398,5 +406,17 @@ small { font-size: 75%; }
   position: relative;
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
 
 @import "assets/sass/codehighlight";

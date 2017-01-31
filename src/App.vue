@@ -9,12 +9,14 @@
       <!--<router-link to="/" exact>Home</router-link>-->
       <!--<router-link to="/quiz">Quiz</router-link>-->
       <!--<mu-icon-button icon='expand_more' slot="right"/>-->
-
+      <router-link to="/" >
       <div class="nav-title-logo text-left">
+
         <span>
           CODEQUIZ
         </span>
       </div>
+      </router-link>
       <!--<mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"-->
                  <!--class="theme-switch"/>-->
       <mu-icon-button @click="openChange" icon='android' slot="right"/>
@@ -22,7 +24,7 @@
     </mu-appbar>
 
     <div class="wrapper" :class="{'nav-hide': !this.$store.state.open}">
-        <transition name="fade" mode="out-in">
+        <transition name="fade">
           <router-view></router-view>
         </transition>
     </div>
