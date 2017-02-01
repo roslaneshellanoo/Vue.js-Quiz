@@ -1,21 +1,14 @@
 <template>
   <mu-drawer @close="handleClose" :open="open" :docked="docked" class="app-drawer" :zDepth="1">
 
-    <div class="logo text-center">
-      <div class="pull-left" >
-        <mu-icon-button iconClass="black" icon='menu' slot="left" />
-      </div>
+    <mu-appbar class="sidebar-nav-appbar logo text-center" :zDepth="0">
+      <mu-icon-button @click="openChange" iconClass="black" icon='menu' slot="left"/>
+      <h4 class="logo-title">
+        <span>CODEQUIZ</span>
+      </h4>
+    </mu-appbar>
 
-      <router-link to="/" exact>
-        <!--<img src="../assets/js.svg">-->
 
-        <h4 class="gradient-text">
-
-          <span>CODEQUIZ</span>
-        </h4>
-      </router-link>
-
-    </div>
 
     <mu-divider/>
 
@@ -39,9 +32,7 @@
 
     data() {
 
-      return {
-
-      }
+      return {}
     },
 
     props: {
@@ -58,8 +49,12 @@
 
     methods: {
 
-      handleClose: ()=> {
+      handleClose: () => {
         this.$emit('close')
+      },
+
+      openChange() {
+        this.$store.commit('openChange')
       },
 
     },

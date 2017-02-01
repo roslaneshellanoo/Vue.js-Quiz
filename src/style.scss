@@ -39,6 +39,11 @@ body {
   padding-top: 0;
 }
 
+body, html {
+  height: 100%;
+}
+
+
 #app {
 
 }
@@ -121,9 +126,11 @@ body {
 
 .mu-drawer.app-drawer {
   width: 210px;
+  z-index: 1004;
 }
 
 .logo {
+  background: #757e8e;
   padding: 2rem 0;
 }
 
@@ -132,9 +139,9 @@ body {
 }
 
 .logo h4 {
-  color: #463c7d;
+  color: #fff;
   font-weight: 100;
-  font-size: 3.2rem;
+  font-size: 2.5rem;
 }
 
 .dark_theme .logo h4 {
