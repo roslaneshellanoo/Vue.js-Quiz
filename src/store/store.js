@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        open: true,
+        open: false,
         docked: true,
         currentRoute: window.location.pathname
     },

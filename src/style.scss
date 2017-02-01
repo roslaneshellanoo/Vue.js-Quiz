@@ -424,6 +424,36 @@ small {
   padding: 2rem 3rem;
 }
 
+.spinner {
+  position: fixed;
+  margin: auto;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.86);
+  z-index: 12;
+  color: #000;
+  left: 0;
+  top: 0;
+
+  @media (min-width: 48em) {
+
+    position: absolute;
+  }
+
+  span {
+    display: table;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
 .dark_theme .spinner {
   background: rgba(0, 0, 0, 0.86);
 }
