@@ -4,7 +4,7 @@
 
     <mu-list class="sidebar-nav">
       <mu-list-item>
-        <router-link @click="openChange" to="/" exact tag="li">Home</router-link>
+        <router-link  to="/" exact tag="li">Home</router-link>
       </mu-list-item>
       <mu-list-item>
         <router-link @click="openChange" to="/quiz" tag="li">
@@ -26,13 +26,13 @@
 
     <mu-list>
       <mu-sub-header>Code Quizes</mu-sub-header>
-      <mu-list-item title="Javascript Quiz" toggleNested :open="open">
+      <mu-list-item title="Javascript Quiz" toggleNested :open="opennav">
         <mu-list-item slot="nested" title="Jquery"></mu-list-item>
         <mu-list-item slot="nested" title="React.js"></mu-list-item>
         <mu-list-item slot="nested" title="Vue.js"></mu-list-item>
       </mu-list-item>
 
-      <mu-list-item title="Python Quiz" toggleNested :open="open">
+      <mu-list-item title="Python Quiz" toggleNested :open="opennav">
         <mu-list-item slot="nested" title="Jquery"></mu-list-item>
         <mu-list-item slot="nested" title="React.js"></mu-list-item>
         <mu-list-item slot="nested" title="Vue.js"></mu-list-item>
@@ -65,6 +65,7 @@
     data() {
       return {
         open: store.state.open,
+        opennav: false,
       }
     },
 

@@ -182,7 +182,8 @@
 
     mounted() {
 
-      this.$store.state.open = false;
+     // this.$store.state.open = false;
+
       this.$nextTick(function() {
         window.particlesJS("particles-js", particlesData);
       });
