@@ -469,9 +469,11 @@ small {
   position: relative;
 }
 
+// vue-router transitions
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
   transition-duration: .25s;
+
 }
 
 .fade-enter-active {

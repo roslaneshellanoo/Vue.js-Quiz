@@ -44,7 +44,7 @@
         </div>
 
 
-        <div class="quiz-loop" v-for="(question, index) in quiz.questions">
+        <div class="quiz-loop" v-for="(question, index) in randomQuiz">
 
 
         <!-- Hide all questions, show only the one with index === to current question index -->
@@ -153,13 +153,12 @@
 
         spinner: false,
         activeStep: 0,
-        quiz: quiz,
+        quiz,
         // Store current question index
         questionIndex: 0,
         // An array initialized with "false" values for each question
         // It means: "did the user answered correctly to the question n?" "no".
         userResponses: Array(quiz.questions.length).fill(false),
-
         snackbar: false,
         toast: false
 
@@ -167,10 +166,16 @@
 
     },
 
+    computed: {
+      randomQuiz: function() {
+        return this.quiz.questions.sort(function(){return 0.5 - Math.random()});
+      }
+    },
+
     mounted: ()=> {
 
       Prism.highlightAll();
-
+      // this.$store.state.open = false;
     },
 
     methods: {

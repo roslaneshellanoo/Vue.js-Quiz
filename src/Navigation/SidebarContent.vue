@@ -2,23 +2,20 @@
 
   <div>
 
+
     <mu-list class="sidebar-nav">
-      <mu-list-item>
-        <router-link  to="/" exact tag="li">Home</router-link>
+      <mu-list-item @click.native="openChange">
+        <router-link   to="/" exact tag="div">Home</router-link>
       </mu-list-item>
-      <mu-list-item>
-        <router-link @click="openChange" to="/quiz" tag="li">
-
+      <mu-list-item  @click.native="openChange">
+        <router-link to="/quiz" tag="div">
             Javascript Quiz
-
-
         </router-link>
       </mu-list-item>
-      <mu-list-item>
-        <router-link @click="openChange" to="/cheatsheet" tag="li">JS Cheatsheet</router-link>
-      </mu-list-item>
-      <mu-list-item>
-        <router-link @click="openChange" to="/todo" tag="li">Vue.js ToDo</router-link>
+      <mu-list-item @click.native="openChange">
+        <router-link  to="/cheatsheet" tag="div">
+          JS Cheatsheet
+        </router-link>
       </mu-list-item>
     </mu-list>
 

@@ -53,7 +53,7 @@
       return {
         routeClass: this.$route.name,
         sharedState: store.state,
-        open: true,
+        open: this.$store.state.open,
         docked: true,
         theme: 'dark',
         themes: {
@@ -124,6 +124,7 @@
       //Init
       this.Resize();
       // console.info(this.$route.name)
+      // this.$store.state.open = false;
 
 
     },
