@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :class="{scrolled: scrolled}">
     <div class="col-xs-12">
 
 
@@ -167,22 +167,29 @@
 
     data() {
       return {
-        open: store.state.open,
-        sharedState: store.state
+        // open: store.state.open,
+        // sharedState: store.state
+        scrolled: false
       }
 
     },
 
-
     methods: {
-      openChange() {
-        this.$store.commit('openChange')
-      },
+      handleScroll() {
+           if (window.scrollY > 50) {
+             this.scrolled = true
+           }
+           else {
+               this.scrolled = false
+           }
+
+      }
     },
 
     mounted() {
 
-     this.$store.state.open = false;
+     // this.$store.state.open = false;
+      window.addEventListener('scroll', this.handleScroll);
 
       this.$nextTick(function() {
         window.particlesJS("particles-js", particlesData);
@@ -234,7 +241,14 @@
   .home .mu-appbar.header-nav-bar {
     background: transparent;
     box-shadow: none;
+    transition: all 350ms ease;
   }
+
+  .home .mu-appbar.header-nav-bar.scrolled {
+    background: radial-gradient(circle at 50% 100%, #4ab3de, #134bb3);
+    box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
+  }
+
 
   .mu-list .active {
     text-decoration: line-through;

@@ -4,7 +4,7 @@
 
     <sidebar-nav @close="toggleNav" :open="this.$store.state.open" :docked="docked"/>
 
-    <mu-appbar title="" class="header-nav-bar" :class="{'nav-hide': !this.$store.state.open}">
+    <mu-appbar title="" class="header-nav-bar" :class="{'nav-hide': !this.$store.state.open, scrolled: scrolled}">
       <mu-icon-button @click="openChange" icon='menu' slot="left"/>
       <!--<router-link to="/" exact>Home</router-link>-->
       <!--<router-link to="/quiz">Quiz</router-link>-->
@@ -13,7 +13,7 @@
       <div class="nav-title-logo text-left">
 
         <span>
-          CODEQUIZ
+          Qwizio
         </span>
       </div>
       </router-link>
@@ -60,7 +60,8 @@
           light,
           dark
         },
-        theme_checked: false
+        theme_checked: false,
+        scrolled: false
       };
     },
 
@@ -112,6 +113,15 @@
 
       },
 
+      handleScroll(e) {
+          if(window.scrollY > 50) {
+              this.scrolled = true;
+          }
+          else {
+              this.scrolled = false;
+          }
+      }
+
 
     },
 
@@ -119,6 +129,7 @@
 
     mounted() {
 
+      window.addEventListener('scroll', this.handleScroll)
       window.addEventListener('resize', this.Resize);
 
       //Init
@@ -139,8 +150,9 @@
 
 <style lang="sass">
 
-  .nav-title-logo.text-left {
+  .nav-title-logo {
     font-size: 24px;
+    font-weight: 100;
   }
 
 

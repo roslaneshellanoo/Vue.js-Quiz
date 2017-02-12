@@ -7,6 +7,7 @@
 $main-grey: #757e8e;
 $main-blue: #3a5783;
 $title-color: #3c414a;
+$blue-gradient: radial-gradient(circle at 50% 100%, #4ab3de, #134bb3);
 
 .white {
   color: #fff;
@@ -34,13 +35,13 @@ html {
 body {
   font-family: 'PT Sans', sans-serif !important;
   font-size: 15px;
-  background-color: #f2f3f5;
+  background-color: #ffffff;
   margin: 0;
   padding-top: 0;
 }
 
 body, html {
-  height: 100%;
+ // height: 100%;
 }
 
 
@@ -72,7 +73,7 @@ body, html {
 }
 
 .mu-appbar.header-nav-bar {
-  background: $main-grey;
+  background: $blue-gradient;
   position: fixed;
   z-index: 999;
   right: 0;
@@ -130,7 +131,7 @@ body, html {
 }
 
 .logo {
-  background: #757e8e;
+  background: $blue-gradient;
   padding: 2rem 0;
 }
 
