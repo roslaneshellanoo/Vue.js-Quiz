@@ -17,6 +17,9 @@
         </span>
       </div>
       </router-link>
+
+
+      <mu-text-field hintText="Search..." type="text" icon="search"/><br/>
       <!--<mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"-->
                  <!--class="theme-switch"/>-->
       <mu-icon-button @click="openChange" icon='android' slot="right"/>
