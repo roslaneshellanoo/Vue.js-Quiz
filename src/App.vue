@@ -13,24 +13,28 @@
       <div class="nav-title-logo text-left">
 
         <span>
-          Qwizio
+          Quizio
         </span>
       </div>
       </router-link>
 
 
-      <mu-text-field hintText="Search..." type="text" icon="search"/><br/>
+      <!--<mu-text-field hintText="Search..." type="text" icon="search"/>-->
       <!--<mu-switch @change="checkNum" label="Change Theme" v-model="theme_checked" slot="right"-->
                  <!--class="theme-switch"/>-->
-      <mu-icon-button @click="openChange" icon='android' slot="right"/>
+      <!--<mu-icon-button @click="openChange" icon='android' slot="right"/>-->
 
     </mu-appbar>
 
-    <div class="wrapper" :class="{'nav-hide': !this.$store.state.open}">
-        <transition name="fade">
+    <div class="wrapper mb3" :class="{'nav-hide': !this.$store.state.open}">
+        <transition name="slide" mode="out-in">
           <router-view></router-view>
         </transition>
     </div>
+
+    <footer class="footer full-width black-bg white py3 text-center">
+       @All copyrights reserved to quizio.io
+    </footer>
 
   </div>
 </template>
@@ -151,11 +155,12 @@
   }
 </script>
 
-<style lang="sass">
+<style>
 
   .nav-title-logo {
     font-size: 24px;
     font-weight: 100;
+
   }
 
 

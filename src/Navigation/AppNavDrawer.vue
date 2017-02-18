@@ -2,9 +2,9 @@
   <mu-drawer @close="handleClose" :open="open" :docked="docked" class="app-drawer" :zDepth="1">
 
     <mu-appbar class="sidebar-nav-appbar logo text-left" :zDepth="0">
-      <mu-icon-button @click="openChange" iconClass="black" icon='menu' slot="left"/>
+      <mu-icon-button @click="openChange" iconClass="white" icon='menu' slot="left"/>
       <h4 class="logo-title">
-        <span>Qwizio</span>
+        <span>Quizio</span>
       </h4>
     </mu-appbar>
 

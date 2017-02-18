@@ -34,8 +34,7 @@
       <!-- index is used to check with current question index -->
 
 
-
-      <div class="wrap-quiz-content" >
+      <div class="wrap-quiz-content">
 
         <div v-show="spinner" class="spinner">
           <span>
@@ -47,68 +46,67 @@
         <div class="quiz-loop" v-for="(question, index) in randomQuiz">
 
 
-        <!-- Hide all questions, show only the one with index === to current question index -->
-        <div class="quiz-block" v-show="index === questionIndex">
-          <h4 class="question-block mb3">
-            <!--{{ questionIndex +1 }}.-->
-            <span v-html="question.text"></span>
-          </h4>
+          <!-- Hide all questions, show only the one with index === to current question index -->
+          <div class="quiz-block" v-show="index === questionIndex"  >
+            <h4 class="question-block mb3">
+              <!--{{ questionIndex +1 }}.-->
+              <span v-html="question.text"></span>
+            </h4>
 
-          <div class="wrap-text-code" v-if="question.textcode">
-             <pre><code class="language-js">{{ question.textcode }}</code></pre>
-          </div>
-
-
-          <mu-divider/>
-
-          <ul class="answers-block list-reset mt4">
-            <li v-for="response in question.responses">
+            <div class="wrap-text-code" v-if="question.textcode">
+              <pre><code class="language-js">{{ question.textcode }}</code></pre>
+            </div>
 
 
-              <label class="mu-radio spacing-bottom">
+            <mu-divider/>
+
+            <ul class="answers-block list-reset mt4">
+              <li v-for="response in question.responses">
 
 
-                <input type="radio"
-                       :value="response.id"
-                       :name="index"
-                       v-model="userResponses[index]"
-                >
+                <label class="mu-radio spacing-bottom">
 
 
-                <div class="mu-radio-wrapper">
-                  <div class="mu-ripple-wrapper mu-radio-ripple-wrapper"></div>
+                  <input type="radio"
+                         :value="response.id"
+                         :name="index"
+                         v-model="userResponses[index]"
+                  >
+
+
+                  <div class="mu-radio-wrapper">
+                    <div class="mu-ripple-wrapper mu-radio-ripple-wrapper"></div>
+                    <!---->
+                    <div class="mu-radio-icon">
+                      <i aria-hidden="true"
+                         class="mu-icon material-icons mu-radio-icon-uncheck radio_button_unchecked">radio_button_unchecked</i>
+                      <i aria-hidden="true"
+                         class="mu-icon material-icons mu-radio-icon-checked radio_button_checked">radio_button_checked</i>
+                    </div>
+                    <div class="mu-radio-label">
+                      {{ response.text }}
+                    </div>
+                  </div>
                   <!---->
-                  <div class="mu-radio-icon">
-                    <i aria-hidden="true"
-                       class="mu-icon material-icons mu-radio-icon-uncheck radio_button_unchecked">radio_button_unchecked</i>
-                    <i aria-hidden="true"
-                       class="mu-icon material-icons mu-radio-icon-checked radio_button_checked">radio_button_checked</i>
-                  </div>
-                  <div class="mu-radio-label">
-                    {{ response.text }}
-                  </div>
-                </div>
-                <!---->
-              </label>
+                </label>
 
 
-            </li>
-          </ul>
-          <br>
-          <!-- The two navigation buttons -->
-          <!-- Note: prev is hidden on first question -->
-          <mu-raised-button v-if="questionIndex > 0" v-on:click="prev" label="Prev"
-                            class="demo-raised-button"/>
+              </li>
+            </ul>
+            <br>
+            <!-- The two navigation buttons -->
+            <!-- Note: prev is hidden on first question -->
+            <mu-raised-button v-if="questionIndex > 0" v-on:click="prev" label="Prev"
+                              class="demo-raised-button"/>
 
-          <mu-raised-button @click="next" label="Next"
-                            class="demo-raised-button"
-                            primary/>
+            <mu-raised-button @click="next" label="Next"
+                              class="demo-raised-button"
+                              primary/>
 
+          </div>
         </div>
-      </div>
-      </div>
 
-
+      </div>
 
 
       <div v-show="questionIndex === quiz.questions.length">
@@ -118,7 +116,7 @@
         <p>
           Total score: {{ score() }} / {{ quiz.questions.length }}
         </p>
-        <mu-raised-button v-on:click="refresh" label="Reload Quiz"
+        <mu-raised-button v-on:click="reloadQuiz" label="Reload Quiz"
                           class="demo-raised-button"
                           primary/>
 
@@ -167,18 +165,24 @@
     },
 
     computed: {
-      randomQuiz: function() {
-        return this.quiz.questions.sort(function(){return 0.5 - Math.random()});
+      randomQuiz: function () {
+        return this.quiz.questions.sort(function () {
+          return 0.5 - Math.random()
+        });
       }
     },
 
-    mounted: ()=> {
+    mounted: () => {
 
       Prism.highlightAll();
       // this.$store.state.open = false;
     },
 
     methods: {
+
+      reloadQuiz: () => {
+          window.location.href="quiz"
+      },
 
       refresh: function () {
 
@@ -192,8 +196,8 @@
 
         this.spinner = true;
         var _this = this;
-        setTimeout(function(){
-           _this.spinner = false;
+        setTimeout(function () {
+          _this.spinner = false;
 
           if (_this.userResponses[_this.activeStep] === false) {
             _this.showSnackbar();
@@ -201,16 +205,15 @@
           else {
             _this.questionIndex++;
             _this.activeStep++;
-           //  _this.showToast();
+            //  _this.showToast();
           }
         }, 500);
-
 
 
       },
 
       // Go to previous question
-      prev: function() {
+      prev: function () {
         this.questionIndex--;
         this.activeStep--;
       },

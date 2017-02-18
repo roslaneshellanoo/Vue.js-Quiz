@@ -3,7 +3,7 @@
     <div class="col-xs-12">
 
 
-      <div class="wrap-home top-block">
+      <div class="wrap-home top-block" :style="{'background-image': `url(${require('../assets/cosmos-2.jpg')})`}">
         <div id="particles-js"></div>
         <div class="text-center mb3">
           <img src="../assets/logo.svg" alt="" style="max-width: 300px">
@@ -14,8 +14,9 @@
         </h4>
       </div>
 
+
       <div class="middle-block">
-        <div class="container">
+        <div class="container white-bg">
 
           <div class="choose-title">
             <h4 class="main-grey">
@@ -23,30 +24,30 @@
             </h4>
           </div>
 
-          <div class="py4">
+          <div class="wrap-main-boxes py4">
             <mu-row gutter>
 
 
               <mu-col width="100" tablet="30" desktop="30">
-                <router-link to="/quiz" >
-                <mu-card>
-                  <mu-card-text>
-                    <img class="pull-left mr3" src="../assets/code-icons/js.svg"/>
+                <router-link to="/quiz">
+                  <mu-card>
+                    <mu-card-text>
+                      <img class="pull-left mr3" src="../assets/code-icons/js.svg"/>
 
                       <h4>
                         Javascript
                       </h4>
 
 
-                    <h4 class="main-grey">
-                      24 Questions
-                    </h4>
-                  </mu-card-text>
-                  <mu-card-actions>
-                    <!--<mu-flat-button label="click here"/>-->
+                      <h4 class="main-grey">
+                        24 Questions
+                      </h4>
+                    </mu-card-text>
+                    <mu-card-actions>
+                      <!--<mu-flat-button label="click here"/>-->
 
-                  </mu-card-actions>
-                </mu-card>
+                    </mu-card-actions>
+                  </mu-card>
                 </router-link>
               </mu-col>
 
@@ -148,8 +149,45 @@
             </mu-row>
 
           </div>
+
         </div>
       </div>
+
+
+      <div class="wrap-main-info my4">
+        <div class="container white-bg">
+          <div class="main-info py4">
+            <mu-row gutter>
+              <mu-col width="100" tablet="50" desktop="45">
+                <img src="../assets/temp-image.svg" alt="">
+              </mu-col>
+              <mu-col width="100" tablet="50" desktop="55">
+                <h5 class="f24">
+                  There are many kinds of narratives and organizing principles. Science is driven by evidence gathered
+                  in experiments.
+                  <br>
+                  <br>
+                  By the falsification their existence is derived from their effects.
+                </h5>
+              </mu-col>
+            </mu-row>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-cheatsheet full-width"  :style="{'background-image': `url(${require('../assets/space-three.jpg')})`}">
+        <div class="overlay-block">
+          <div class="container">
+            <div class="wrap-image text-center">
+              <!--<img src="../assets/code-icons/coding.svg" width="200" alt="">-->
+              <h2 class="white uppercase">Check our Cheatsheet</h2>
+              <mu-raised-button label="Cheatsheet" class="demo-raised-button" secondary/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
   </div>
@@ -176,22 +214,22 @@
 
     methods: {
       handleScroll() {
-           if (window.scrollY > 50) {
-             this.scrolled = true
-           }
-           else {
-               this.scrolled = false
-           }
+        if (window.scrollY > 50) {
+          this.scrolled = true
+        }
+        else {
+          this.scrolled = false
+        }
 
       }
     },
 
     mounted() {
 
-     // this.$store.state.open = false;
+      // this.$store.state.open = false;
       window.addEventListener('scroll', this.handleScroll);
 
-      this.$nextTick(function() {
+      this.$nextTick(function () {
         window.particlesJS("particles-js", particlesData);
       });
     },
@@ -204,19 +242,18 @@
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
 
   body {
     padding-top: 0;
   }
 
   .home {
-    background: #d4ddec;
+    background: #f5f5fa;
   }
 
   .home .container {
     position: relative;
-    background: #ffffff;
   }
 
   .home #particles-js {
@@ -226,11 +263,11 @@
     width: 100%;
     height: 100%;
   }
+
   .home #particles-js canvas {
     width: 100%;
     height: 100%;
   }
-
 
   @media (min-width: 993px) {
     .home .container {
@@ -245,53 +282,15 @@
   }
 
   .home .mu-appbar.header-nav-bar.scrolled {
-    background: radial-gradient(circle at 50% 100%, #4ab3de, #134bb3);
-    box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
+    background: linear-gradient(to right, #134bb3, #4ab3de);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .117647), 0 1px 4px rgba(0, 0, 0, .117647);
   }
-
 
   .mu-list .active {
     text-decoration: line-through;
   }
 
-  .wrap-home {
-    background-color: #b16cf5;
-    background-image: linear-gradient(to left, #b16cf5, #134bb3);
-    background-color: #b16cf5;
-    background-image: radial-gradient(circle farthest-side at center bottom, #4ab3de, #134bb3 125%);
-    /*background: url(http://www.metalinjection.net/wp-content/uploads/2014/07/space-metal.jpg);*/
-    /*background-size: cover;*/
-    background-attachment: fixed;
-    padding: 9rem 0;
-    position: relative;
-  }
 
-  .home-title {
-    font-size: 36px;
-  }
 
-  .choose-title {
-    position: absolute;
-    top: -7.7rem;
-    background: #fff;
-    width: 100%;
-    left: 0;
-    border-bottom: 2px solid #f1f1f1;
-    padding: 1.5rem 3rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
 
-  .middle-block .col {
-    margin-bottom: 3rem;
-  }
-
-  .middle-block .mu-card {
-    border-radius: 5px;
-    transition: all 350ms ease;
-  }
-
-  .middle-block .mu-card:hover {
-    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451);
-  }
 </style>
