@@ -6,8 +6,6 @@ Vue.use(VueRouter)
 import Home from '../pages/Home.vue'
 import Quiz from '../pages/Quiz.vue'
 import Cheatsheet from '../pages/Cheatsheet.vue'
-//import Todo from '../pages/Todo.vue'
-
 
 export default new VueRouter({
   mode: 'history',
@@ -29,10 +27,7 @@ export default new VueRouter({
       component: Cheatsheet,
       name: "cheatsheet"
     },
-    // {
-    //   path: '/todo',
-    //   component: Todo
-    // }
+
 
   ]
 })
