@@ -202,7 +202,11 @@
 
   export default {
     name: 'home',
-
+    metaInfo: {
+      title: 'Quizio - Test your code skills',
+      // override the parent template and just use the above title only
+      titleTemplate: null
+    },
     data() {
       return {
         // open: store.state.open,

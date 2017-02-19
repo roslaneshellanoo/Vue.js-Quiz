@@ -143,6 +143,11 @@
   export default {
 
     name: 'quiz',
+    metaInfo: {
+      // title will be injected into parent titleTemplate
+      title: 'Javascript Quiz, Examine, Test'
+    },
+
     loading: false,
 
     data() {

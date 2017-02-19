@@ -53,6 +53,13 @@
   export default {
     name: 'app',
 
+    metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Test your code skills',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Quizio'
+    },
+
     components: {
       'sidebar-nav': AppNavDrawer
     },
